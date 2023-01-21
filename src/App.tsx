@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     AppBar,
     Box,
     Button,
-    CssBaseline,
+    CssBaseline, Drawer,
     IconButton,
     Toolbar,
     Typography
@@ -11,13 +11,16 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 
 export const App = () => {
+    const [IsDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
+
     return (
         <>
             <CssBaseline/>
-            <Box sx={{flexGrow: 1}}>
+            <Box>
                 <AppBar position="static">
                     <Toolbar>
                         <IconButton
+                            onClick={() => setIsDrawerOpen(true)}
                             size="large"
                             edge="start"
                             color="inherit"
@@ -33,6 +36,13 @@ export const App = () => {
                     </Toolbar>
                 </AppBar>
                 <h1>Eneyida TV</h1>
+                <Drawer
+                    anchor='left'
+                    open={IsDrawerOpen}
+                    onClose={() => setIsDrawerOpen(false)}
+                >
+                    +++++++++ menu ++++++++
+                </Drawer>
             </Box>
         </>
     );
