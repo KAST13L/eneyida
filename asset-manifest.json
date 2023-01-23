@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/eneyida/static/css/main.e6c13ad2.css",
-    "main.js": "/eneyida/static/js/main.d610cee6.js",
+    "main.js": "/eneyida/static/js/main.f132a68e.js",
     "index.html": "/eneyida/index.html",
     "main.e6c13ad2.css.map": "/eneyida/static/css/main.e6c13ad2.css.map",
-    "main.d610cee6.js.map": "/eneyida/static/js/main.d610cee6.js.map"
+    "main.f132a68e.js.map": "/eneyida/static/js/main.f132a68e.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d610cee6.js"
+    "static/js/main.f132a68e.js"
   ]
 }
