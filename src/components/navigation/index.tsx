@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
+import {Link} from "react-router-dom";
 
 export const Navigation = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -33,7 +34,9 @@ export const Navigation = () => {
                         <ListItemIcon>
                             <SettingsIcon/>
                         </ListItemIcon>
-                        <ListItemText primary={'Settings'}/>
+                        <Link to={'settings'}>
+                            <ListItemText primary={'Settings'}/>
+                        </Link>
                     </ListItemButton>
                 </ListItem>
             </List>
@@ -57,18 +60,21 @@ export const Navigation = () => {
                         </IconButton>
                     </Hidden>
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                        Movies Recommendation
+                        <Link to={'/'}>
+                            Movies Recommendation
+                        </Link>
                     </Typography>
 
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
-                        <Button sx={{my: 2, color: 'white', display: 'block'}}>
-                            Settings
-                        </Button>
+                        <Link to={'settings'}>
+                            <Button sx={{my: 2, color: 'white', display: 'block'}}>
+                                Settings
+                            </Button>
+                        </Link>
                     </Box>
 
                 </Toolbar>
             </AppBar>
-            <h1>Eneyida TV</h1>
             <Drawer
                 anchor='left'
                 open={isOpen}

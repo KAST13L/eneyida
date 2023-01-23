@@ -1,6 +1,8 @@
 import React from 'react';
-import {CssBaseline} from "@mui/material";
+import {Container, CssBaseline} from "@mui/material";
 import {Navigation} from "./components";
+import {Route, Routes} from "react-router-dom";
+import {Home, Recommend, Settings} from "./pages";
 
 export const App = () => {
 
@@ -8,6 +10,13 @@ export const App = () => {
         <>
             <CssBaseline/>
             <Navigation/>
+            <Container maxWidth={'xl'}>
+                <Routes>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='settings' element={<Settings/>}/>
+                    <Route path='recommend' element={<Recommend/>}/>
+                </Routes>
+            </Container>
         </>
     );
 };
