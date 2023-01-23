@@ -67,11 +67,10 @@ export const Navigation = () => {
                         </Typography>
                     </Link>
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
-                        <Link component={RouterLink} to={'settings'}>
-                            <Button sx={{my: 2, color: 'white', display: 'block'}}>
-                                Settings
-                            </Button>
-                        </Link>
+                        <Button component={RouterLink} to={'settings'}
+                                sx={{my: 2, color: 'white', display: 'block'}}>
+                            Settings
+                        </Button>
                     </Box>
 
                 </Toolbar>
