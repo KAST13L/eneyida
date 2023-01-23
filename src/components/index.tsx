@@ -1,11 +1,5 @@
-import React from 'react';
+import {Navigation} from './navigation';
 
-const Index = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default Index;
+export {
+    Navigation
+}
