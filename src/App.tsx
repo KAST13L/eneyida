@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, CssBaseline} from "@mui/material";
+import {Box, Container, CssBaseline} from "@mui/material";
 import {Navigation} from "./components";
 import {Route, Routes} from "react-router-dom";
 import {Home, Recommend, Settings} from "./pages";
@@ -10,13 +10,17 @@ export const App = () => {
         <>
             <CssBaseline/>
             <Navigation/>
-            <Container maxWidth={'xl'}>
-                <Routes>
-                    <Route path='/' element={<Home/>}/>
-                    <Route path='settings' element={<Settings/>}/>
-                    <Route path='recommend' element={<Recommend/>}/>
-                </Routes>
-            </Container>
+            <Box sx={{
+                backgroundColor: (theme) => theme.palette.grey[300]
+            }}>
+                <Container maxWidth={'xl'}>
+                    <Routes>
+                        <Route path='/' element={<Home/>}/>
+                        <Route path='settings' element={<Settings/>}/>
+                        <Route path='recommend' element={<Recommend/>}/>
+                    </Routes>
+                </Container>
+            </Box>
         </>
     );
 };
