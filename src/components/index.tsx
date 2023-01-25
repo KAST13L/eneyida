@@ -1,5 +1,6 @@
 import {Navigation} from './navigation';
+import {MovieCard} from './movieCard';
 
 export {
-    Navigation
+    Navigation, MovieCard
 }

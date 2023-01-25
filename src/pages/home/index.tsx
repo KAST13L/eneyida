@@ -1,5 +1,7 @@
 import React from 'react';
 import {Box, Grid, Paper, styled} from "@mui/material";
+import {MovieCard} from "../../components";
+
 
 export const Home = () => {
 
@@ -23,7 +25,7 @@ export const Home = () => {
                 </Grid>
                 <Grid item xs={12} md={8}>
                     <Paper elevation={5}>
-                        List of movies
+                        <MovieCard/>
                     </Paper>
                 </Grid>
                 <Grid item xs={12} md={4}>

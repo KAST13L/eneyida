@@ -11,7 +11,7 @@ export const App = () => {
             <CssBaseline/>
             <Navigation/>
             <Box sx={{
-                backgroundColor: (theme) => theme.palette.grey[300]
+                backgroundColor: (theme) => theme.palette.grey[200]
             }}>
                 <Container maxWidth={'xl'}>
                     <Routes>
