@@ -10,7 +10,7 @@ export const Home = () => {
         color: theme.palette.text.secondary,
         height: 'calc(100vh - 130px)',
         position: 'sticky',
-        top: theme.spacing(2)
+        top: theme.spacing(2),
     }))
 
     return (
@@ -28,7 +28,7 @@ export const Home = () => {
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Paper elevation={5}>
-                        <SelectedMovies/>
+                        <SelectedMovies>selected movies</SelectedMovies>
                     </Paper>
                 </Grid>
             </Grid>
