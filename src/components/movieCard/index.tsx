@@ -4,9 +4,11 @@ import {CardMenu} from "./components/cardMenu";
 
 export const MovieCard = () => {
 
+    const onAddClick = () => alert('film added')
+
     return (
         <Card sx={{maxWidth: 250, position:'relative'}}>
-            <CardMenu/>
+            <CardMenu onAddClick={onAddClick}/>
             <CardMedia
                 component="img"
                 height="200"
