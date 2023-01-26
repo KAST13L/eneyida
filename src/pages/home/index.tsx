@@ -28,40 +28,11 @@ export const Home = () => {
                         <Box sx={{flexGrow: 1, padding: 1}}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard/>
+                                    <MovieCard movie={{
+                                        title: 'Sonic. The legend of white space',
+                                        releaseDate: 'Apr 08, 2022',
+                                        image: "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                                    }} onSelectClick={() => alert('movie selected')}/>
                                 </Grid>
                             </Grid>
                         </Box>

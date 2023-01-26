@@ -2,25 +2,35 @@ import React from 'react';
 import {Card, CardContent, CardMedia, Typography} from "@mui/material";
 import {CardMenu} from "./components/cardMenu";
 
-export const MovieCard = () => {
+interface MovieCardPropsType {
+    movie: {
+        title: string,
+        image: string,
+        releaseDate: string
+    },
+    onSelectClick: () => void
+}
 
-    const onAddClick = () => alert('film added')
+export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) => {
+
+    const {title,image,releaseDate} = movie
+
 
     return (
         <Card sx={{maxWidth: 250, position:'relative'}}>
-            <CardMenu onAddClick={onAddClick}/>
+            <CardMenu onSelectClick={onSelectClick}/>
             <CardMedia
                 component="img"
                 height="200"
-                image="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                alt="Paella dish"
+                image={image}
+                alt={title}
             />
             <CardContent>
                 <Typography variant="h4">
-                    Sonic. The legend of white space
+                    {title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Apr 08, 2022
+                    {releaseDate}
                 </Typography>
             </CardContent>
         </Card>

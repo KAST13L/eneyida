@@ -3,10 +3,10 @@ import {IconButton, Menu, MenuItem} from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 interface CardMenuPropsType {
-    onAddClick: () => void
+    onSelectClick: () => void
 }
 
-export const CardMenu: React.FC<CardMenuPropsType> = ({onAddClick}) => {
+export const CardMenu: React.FC<CardMenuPropsType> = ({onSelectClick}) => {
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -38,7 +38,7 @@ export const CardMenu: React.FC<CardMenuPropsType> = ({onAddClick}) => {
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={
                     ()=> {
-                        onAddClick()
+                        onSelectClick()
                         handleClose()
                     }
                 }>Add</MenuItem>
