@@ -1,13 +1,16 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Typography} from "@mui/material";
+import {CardMenu} from "./components/cardMenu";
 
 export const MovieCard = () => {
+
     return (
-        <Card sx={{maxWidth: 345}}>
+        <Card sx={{maxWidth: 250, position:'relative'}}>
+            <CardMenu/>
             <CardMedia
                 component="img"
-                height="194"
-                image=".."
+                height="200"
+                image="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
                 alt="Paella dish"
             />
             <CardContent>
