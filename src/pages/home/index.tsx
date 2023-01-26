@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, Grid, Paper, styled} from "@mui/material";
 import {MovieCard} from "../../components";
+import {movies} from "../../stories/stub";
 
 
 export const Home = () => {
@@ -27,13 +28,16 @@ export const Home = () => {
                     <Paper elevation={5}>
                         <Box sx={{flexGrow: 1, padding: 1}}>
                             <Grid container spacing={2}>
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
-                                    <MovieCard movie={{
-                                        title: 'Sonic. The legend of white space',
-                                        releaseDate: 'Apr 08, 2022',
-                                        image: "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                                    }} onSelectClick={() => alert('movie selected')}/>
-                                </Grid>
+                                {
+                                    movies.map(el => <Grid item xs={12} sm={6} md={4} lg={3}>
+                                        <MovieCard movie={{
+                                            title: el.title,
+                                            image: el.image,
+                                            releaseDate: el.releaseDate
+                                        }}
+                                           onSelectClick={() => alert('movie is select')}/>
+                                    </Grid>)
+                                }
                             </Grid>
                         </Box>
                     </Paper>
