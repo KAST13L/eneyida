@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Grid, Paper, styled} from "@mui/material";
 import {MovieCard} from "../../components";
-import {movies} from "../../stories/stub";
+import {movies} from "../../ss/stub";
 
 
 export const Home = () => {
