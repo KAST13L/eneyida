@@ -10,7 +10,18 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 
-export const MovieCardSelected = () => {
+interface MovieCardSelectedPropsType {
+    movie: {
+        title: string,
+        image: string,
+        releaseDate: string
+    }
+}
+
+export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie}) => {
+
+    const {title,image,releaseDate} = movie
+
     const theme = useTheme();
 
     return (

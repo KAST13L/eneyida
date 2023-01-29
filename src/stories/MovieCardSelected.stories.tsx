@@ -12,7 +12,7 @@ export default {
     }
 } as ComponentMeta<typeof MovieCardSelected>;
 
-const Template: ComponentStory<typeof MovieCardSelected> = () => <MovieCardSelected/>;
+const Template: ComponentStory<typeof MovieCardSelected> = (args) => <MovieCardSelected {...args}/>;
 
 export const View = Template.bind({});
 View.args = {
