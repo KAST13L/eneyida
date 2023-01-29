@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof MovieCardSelected> = (args) => <MovieCardS
 
 export const View = Template.bind({});
 View.args = {
-    movie: movies[0],
+    movie: movies[2],
 }
 
 
