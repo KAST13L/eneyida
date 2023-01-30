@@ -4,13 +4,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import {MovieType} from "../../stories/stub";
 
 interface MovieCardSelectedPropsType {
-    movie: {
-        title: string,
-        image: string,
-        releaseDate: string
-    }
+    movie: MovieType
+    onCardDelete: () => void
 }
 
 export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie}) => {

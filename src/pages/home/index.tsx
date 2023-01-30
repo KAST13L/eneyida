@@ -54,8 +54,10 @@ export const Home = () => {
                                         <MovieCardSelected movie={{
                                             title: el.title,
                                             image: el.image,
-                                            releaseDate: el.releaseDate
-                                        }}/>
+                                            releaseDate: el.releaseDate,
+                                            genres: el.genres,
+                                            runtime: el.runtime
+                                        }} onCardDelete={()=>alert('delete')}/>
                                     </Grid>)
                                 }
                             </Grid>
