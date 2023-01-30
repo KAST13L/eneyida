@@ -5,7 +5,7 @@ import {action} from "@storybook/addon-actions";
 import {movies} from "./stub";
 
 export default {
-    title: 'Example/MovieCard',
+    title: 'Card/MovieCard',
     component: MovieCard,
     argTypes: {
         onSelectClick: action('film selected')
