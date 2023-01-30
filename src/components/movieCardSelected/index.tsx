@@ -5,18 +5,20 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {MovieType} from "../../stories/stub";
+import {IconButton} from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 interface MovieCardSelectedPropsType {
     movie: MovieType
     onCardDelete: () => void
 }
 
-export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie}) => {
+export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie,onCardDelete}) => {
 
     const {title, image, releaseDate, genres, runtime} = movie
 
     return (
-        <Card sx={{display: 'flex'}}>
+        <Card sx={{display: 'flex', position:'relative'}}>
             <CardMedia
                 component="img"
                 sx={{width: 100}}
@@ -42,6 +44,12 @@ export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie})
                     </Typography>
                 </CardContent>
             </Box>
+            <IconButton
+                onClick={onCardDelete}
+                sx={{position:'absolute', right:5, top: 5, background:'rgba(255,255,255,.3)', color:'red'}}
+            >
+                <DeleteIcon />
+            </IconButton>
         </Card>
     );
 }
