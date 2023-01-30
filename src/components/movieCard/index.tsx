@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Typography} from "@mui/material";
-import {CardMenu} from "./components/cardMenu";
+import {RightTopButtonMenu} from "../RightTopMenu";
 
 interface MovieCardPropsType {
     movie: {
@@ -18,7 +18,7 @@ export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) 
 
     return (
         <Card sx={{maxWidth: 250, position:'relative'}}>
-            <CardMenu onSelectClick={onSelectClick}/>
+            <RightTopButtonMenu callback={onSelectClick}/>
             <CardMedia
                 component="img"
                 height="200"

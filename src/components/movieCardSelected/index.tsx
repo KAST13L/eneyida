@@ -13,24 +13,32 @@ interface MovieCardSelectedPropsType {
 
 export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie}) => {
 
-    const {title, image, releaseDate} = movie
+    const {title, image, releaseDate, genres, runtime} = movie
 
     return (
         <Card sx={{display: 'flex'}}>
             <CardMedia
                 component="img"
-                sx={{width: 151}}
+                sx={{width: 100}}
                 image={image}
                 alt={title}
             />
             <Box sx={{display: 'flex', flexDirection: 'column'}}>
-                <CardContent>
+                <CardContent sx={{flex: '1 0 auto'}}>
                     <Typography component="div" variant="h5">
                         {title}
                     </Typography>
                     <Typography variant="subtitle1"
                                 component="div">
                         {releaseDate}
+                    </Typography><hr/>
+                    <Typography variant="subtitle2"
+                                component="div">
+                        genres: {genres[0].name}
+                    </Typography>
+                    <Typography variant="subtitle2"
+                                component="div">
+                        runtime: {runtime}
                     </Typography>
                 </CardContent>
             </Box>
