@@ -31,7 +31,7 @@ export const movies: MovieType[] = [
         runtime: 1201
     },
     {
-        title: 'Last of ass',
+        title: 'Hero without you',
         releaseDate: 'Jun 31, 1901',
         image: "https://www.themoviedb.org/t/p/w220_and_h330_face/onp2UrYrvkHphkrCq8wKFflmlKl.jpg",
         genres: [{
