@@ -15,7 +15,7 @@ interface MovieCardSelectedPropsType {
 
 export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie,onCardDelete}) => {
 
-    const {title, image, releaseDate, genres, runtime} = movie
+    const {title, image, releaseDate, genres, runtime} = movie;
 
     return (
         <Card sx={{display: 'flex', position:'relative'}}>
