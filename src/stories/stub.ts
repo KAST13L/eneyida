@@ -25,7 +25,7 @@ export const movies: MovieType[] = [
         releaseDate: 'May 02, 2001',
         image: "https://www.themoviedb.org/t/p/w220_and_h330_face/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
         genres: [{
-            id: 2,
+            id: 3,
             name: 'jah'
         }],
         runtime: 1201
