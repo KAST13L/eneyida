@@ -18,7 +18,7 @@ export const movies: MovieType[] = [
             id: 2,
             name: 'drama'
         }],
-        runtime: 120
+        runtime: 121
     },
     {
         title: 'Last of us',
