@@ -22,7 +22,7 @@ export const movies: MovieType[] = [
     },
     {
         title: 'Last of us',
-        releaseDate: 'May 02, 2021',
+        releaseDate: 'May 02, 2011',
         image: "https://www.themoviedb.org/t/p/w220_and_h330_face/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
         genres: [{
             id: 2,
