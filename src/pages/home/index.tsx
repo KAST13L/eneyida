@@ -1,17 +1,9 @@
 import React from 'react';
 import {Box, Grid, Paper} from "@mui/material";
-import {useQuery} from "@apollo/client";
-import {MOVIES_QUERY} from "./queries";
 import {ListOfMovies} from "./listOfMovies";
 import {ListOfSelectedMovies} from "./listOfSelectedMovies";
 
 export const Home = () => {
-
-    const {error} = useQuery(MOVIES_QUERY)
-
-    if (error) {
-        return <div>Error</div>
-    }
 
     return (
         <Box sx={{flexGrow: 1, marginTop: 2}}>
