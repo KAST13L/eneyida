@@ -4,8 +4,8 @@ import './index.css';
 import {App} from './App';
 import {HashRouter} from "react-router-dom";
 import {
-    ApolloProvider,
     ApolloClient,
+    ApolloProvider,
     createHttpLink,
     InMemoryCache
 } from '@apollo/client';
