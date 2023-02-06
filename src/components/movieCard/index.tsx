@@ -21,12 +21,12 @@ export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) 
             <RightTopButtonMenu callback={onSelectClick}/>
             <CardMedia
                 component="img"
-                height="200"
+                height="300"
                 image={posterPath}
                 alt={title}
             />
             <CardContent>
-                <Typography variant="h4">
+                <Typography variant="h5">
                     {title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
