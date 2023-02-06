@@ -9,6 +9,10 @@ export const ListOfMovies = () => {
 
     const {loading, error, data} = useQuery(MOVIES_QUERY)
 
+    if (error) {
+        return <div>ERROR</div>
+    }
+
     return (
         <Box sx={{flexGrow: 1, padding: 1}}>
             <Grid container spacing={2}>
