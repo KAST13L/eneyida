@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Box, Grid} from "@mui/material";
 import {MovieType} from "../../../stories/stub";
 import {MovieCard} from "../../../components";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "../queries";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 export const ListOfMovies = () => {
 
-    const {loading, error, data} = useQuery(MOVIES_QUERY)
+    const [page, setPage] = useState(1)
+    const {loading, error, data} = useQuery(MOVIES_QUERY, {variables: {page}})
 
     if (error) {
         return <div>ERROR</div>
     }
+
+    const totalCountPages = Math.floor(data?.movies?.totalPages / 20)
 
     return (
         <Box sx={{flexGrow: 1, padding: 1}}>
@@ -31,6 +36,13 @@ export const ListOfMovies = () => {
                                        onSelectClick={() => alert('movie is select')}/>
                         </Grid>)
                 }
+                <Stack spacing={2} sx={{margin: 3}}>
+                    <Pagination
+                        count={totalCountPages}
+                        page={page}
+                        onChange={(event, page) => setPage(page)}
+                    />
+                </Stack>
             </Grid>
         </Box>
     );
