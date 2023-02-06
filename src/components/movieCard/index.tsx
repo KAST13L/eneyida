@@ -5,7 +5,7 @@ import {RightTopButtonMenu} from "../RightTopMenu";
 interface MovieCardPropsType {
     movie: {
         title: string,
-        image: string,
+        posterPath: string,
         releaseDate: string
     },
     onSelectClick: () => void
@@ -13,7 +13,7 @@ interface MovieCardPropsType {
 
 export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) => {
 
-    const {title,image,releaseDate} = movie
+    const {title,posterPath,releaseDate} = movie
 
 
     return (
@@ -22,7 +22,7 @@ export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) 
             <CardMedia
                 component="img"
                 height="200"
-                image={image}
+                image={posterPath}
                 alt={title}
             />
             <CardContent>
