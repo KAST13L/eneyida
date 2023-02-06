@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Grid, Paper, styled} from "@mui/material";
 import {MovieCard, MovieCardSelected} from "../../components";
-import {movies} from "../../stories/stub";
+import {movies, MovieType} from "../../stories/stub";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "./queries";
 
@@ -20,7 +20,7 @@ export const Home = () => {
     const {loading, error, data} = useQuery(MOVIES_QUERY)
 
     if (error) {
-        return "Error"
+        return <div>Error</div>
     }
 
     return (
@@ -39,14 +39,16 @@ export const Home = () => {
                                     loading && "Loading..."
                                 }
                                 {
-                                    data && data.movies.results.map((el: {title: string, posterPath: string, releaseDate: string}) => <Grid item xs={12} sm={6}
-                                                                                md={4} lg={3} key={el.title}>
-                                        <MovieCard movie={{
-                                            title: el.title,
-                                            posterPath: el.posterPath,
-                                            releaseDate: el.releaseDate
-                                        }} onSelectClick={() => alert('movie is select')}/>
-                                    </Grid>)
+                                    data && data.movies.results.map((el: MovieType) =>
+                                        <Grid item xs={12} sm={6} md={4} lg={3}
+                                              key={el.title}>
+                                            <MovieCard movie={{
+                                                title: el.title,
+                                                posterPath: el.posterPath,
+                                                releaseDate: el.releaseDate
+                                            }}
+                                                       onSelectClick={() => alert('movie is select')}/>
+                                        </Grid>)
                                 }
                             </Grid>
                         </Box>
@@ -62,7 +64,7 @@ export const Home = () => {
                                                            lg={3} key={el.title}>
                                         <MovieCardSelected movie={{
                                             title: el.title,
-                                            image: el.image,
+                                            posterPath: el.posterPath,
                                             releaseDate: el.releaseDate,
                                             genres: el.genres,
                                             runtime: el.runtime

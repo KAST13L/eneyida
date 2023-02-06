@@ -15,14 +15,14 @@ interface MovieCardSelectedPropsType {
 
 export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({movie,onCardDelete}) => {
 
-    const {title, image, releaseDate, genres, runtime} = movie;
+    const {title, posterPath, releaseDate, genres, runtime} = movie;
 
     return (
         <Card sx={{display: 'flex', position:'relative'}}>
             <CardMedia
                 component="img"
                 sx={{width: 100}}
-                image={image}
+                image={posterPath}
                 alt={title}
             />
             <Box sx={{display: 'flex', flexDirection: 'column'}}>
