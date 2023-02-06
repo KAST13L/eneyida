@@ -2,8 +2,13 @@ import React from 'react';
 import {Box, Grid} from "@mui/material";
 import {MovieType} from "../../../stories/stub";
 import {MovieCard} from "../../../components";
+import {useQuery} from "@apollo/client";
+import {MOVIES_QUERY} from "../queries";
 
-export const ListOfMovies = ({loading, data}: any) => {
+export const ListOfMovies = () => {
+
+    const {loading, error, data} = useQuery(MOVIES_QUERY)
+
     return (
         <Box sx={{flexGrow: 1, padding: 1}}>
             <Grid container spacing={2}>
