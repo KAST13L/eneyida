@@ -1,12 +1,14 @@
 import React from 'react';
 import {IconButton, Menu, MenuItem} from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import {MovieType} from "../../stories/stub";
 
 interface RightTopButtonPropsType {
-    callback: () => void
+    callback: (movie:MovieType) => void
+    movie: MovieType
 }
 
-export const RightTopButtonMenu: React.FC<RightTopButtonPropsType> = ({callback}) => {
+export const RightTopButtonMenu: React.FC<RightTopButtonPropsType> = ({callback, movie}) => {
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -38,7 +40,7 @@ export const RightTopButtonMenu: React.FC<RightTopButtonPropsType> = ({callback}
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={
                     ()=> {
-                        callback()
+                        callback(movie)
                         handleClose()
                     }
                 }>Add</MenuItem>

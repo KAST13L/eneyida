@@ -2,11 +2,11 @@ export type MovieType =  {
     title: string,
     posterPath: string,
         releaseDate: string,
-        genres: {
+        genres?: {
         id: number,
             name: string
     }[],
-        runtime: number
+        runtime?: number
 }
 
 export const movies: MovieType[] = [
