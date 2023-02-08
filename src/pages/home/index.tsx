@@ -76,17 +76,13 @@ export const Home = () => {
                 <Grid item xs={12} md={4}>
                     <SelectedMovies>
                         {
-                            selectedMovies.map(el => <Grid item xs={12} sm={6}
-                                                           md={4}
-                                                           lg={3} key={el.title}>
-                                <MovieCardSelected movie={{
+                            selectedMovies.map(el => <MovieCardSelected key={el.title} movie={{
                                     title: el.title,
                                     posterPath: el.posterPath,
                                     releaseDate: el.releaseDate,
                                     genres: el.genres,
                                     runtime: el.runtime
-                                }} onCardDelete={() => alert('delete')}/>
-                            </Grid>)
+                                }} onCardDelete={() => alert('delete')}/>)
                         }
                     </SelectedMovies>
                 </Grid>
@@ -95,3 +91,4 @@ export const Home = () => {
     );
 };
 
+// item xs={12} sm={6} md={4} lg={3}

@@ -22,7 +22,7 @@ export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({
     return (
         <Paper elevation={5} sx={{margin: 1}}>
 
-            <Card sx={{display: 'flex', width: '440px'}}>
+            <Card sx={{display: 'flex'}}>
                 <CardMedia
                     component="img"
                     sx={{width: 100}}
@@ -58,7 +58,6 @@ export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({
                     </IconButton>
                 </Box>
             </Card>
-
         </Paper>
     );
 }
