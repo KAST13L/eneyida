@@ -9,7 +9,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 interface MovieCardSelectedPropsType {
     movie: MovieType
-    onCardDelete: () => void
+    onCardDelete: (movie: MovieType) => void
 }
 
 export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({
@@ -45,7 +45,7 @@ export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({
                         </Typography>
                     </CardContent>
                     <IconButton
-                        onClick={onCardDelete}
+                        onClick={ () => onCardDelete(movie) }
                         sx={{
                             position: 'absolute',
                             right: 5,

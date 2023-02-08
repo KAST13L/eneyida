@@ -25,7 +25,7 @@ export const Home = () => {
     const [page, setPage] = useState(1)
     const {loading, error, data} = useQuery(MOVIES_QUERY, {variables: {page}})
 
-    const {selectedMovies, selectMovie} = useMovies()
+    const {selectedMovies, selectMovie, deleteMovie} = useMovies()
 
     if (error) {
         return <div>ERROR</div>
@@ -82,7 +82,7 @@ export const Home = () => {
                                     releaseDate: el.releaseDate,
                                     genres: el.genres,
                                     runtime: el.runtime
-                                }} onCardDelete={() => alert('delete')}/>)
+                                }} onCardDelete={deleteMovie}/>)
                         }
                     </SelectedMovies>
                 </Grid>
