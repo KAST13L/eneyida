@@ -6,9 +6,14 @@ export const useMovies = () => {
     const [selectedMovies, setSelectedMovies] = useState<MovieType[]>([])
 
     const selectMovie = useCallback((movie: MovieType) => {
-        if (!selectedMovies.find(({title}) => title === movie.title )) {
+
+        const selectedMoviesLength = selectedMovies.length
+        const isNewMovie = !selectedMovies.find(({title}) => title === movie.title )
+
+        if (isNewMovie && selectedMoviesLength < 20) {
             setSelectedMovies([movie, ...selectedMovies])
         }
+
     }, [selectedMovies])
 
     const deleteMovie = useCallback((movie: MovieType) => {
