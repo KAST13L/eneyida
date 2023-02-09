@@ -69,8 +69,6 @@ export const Home = () => {
                                 </Stack>
                             </Grid>
                         </Box>
-
-
                     </Paper>
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -90,5 +88,3 @@ export const Home = () => {
         </Box>
     );
 };
-
-// item xs={12} sm={6} md={4} lg={3}
