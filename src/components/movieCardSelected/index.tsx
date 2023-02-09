@@ -7,6 +7,7 @@ import {MovieType} from "../../stories/stub";
 import {Box, IconButton, Paper} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+
 interface MovieCardSelectedPropsType {
     movie: MovieType
     onCardDelete: (movie: MovieType) => void

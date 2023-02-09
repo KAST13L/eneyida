@@ -75,21 +75,23 @@ export const Home = () => {
                         {
                             !selectedMovies.length &&
                             <Typography sx={{textAlign: 'center', paddingTop: 5}}
-                                        component="div" variant="h5">No selected movies...
+                                        component="div" variant="h5">No selected
+                                movies...
                             </Typography>
                         }
+
                         {
-                            selectedMovies.map(el => <MovieCardSelected key={el.title}
-                                                                        movie={{
-                                                                            title: el.title,
-                                                                            posterPath: el.posterPath,
-                                                                            releaseDate: el.releaseDate,
-                                                                            genres: el.genres,
-                                                                            runtime: el.runtime
-                                                                        }}
-                                                                        onCardDelete={deleteMovie}/>)
-                        }
-                    </SelectedMovies>
+                            selectedMovies.map(el => <MovieCardSelected
+                                key={el.title}
+                                movie={{
+                                    title: el.title,
+                                    posterPath: el.posterPath,
+                                    releaseDate: el.releaseDate,
+                                    genres: el.genres,
+                                    runtime: el.runtime
+                                }}
+                                onCardDelete={deleteMovie}/>)
+                        }                                                </SelectedMovies>
                 </Grid>
             </Grid>
         </Box>
