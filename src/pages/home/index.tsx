@@ -8,7 +8,6 @@ import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import {useMovies} from "../../hooks/useMovies";
 import Typography from "@mui/material/Typography";
-import CardMedia from "@mui/material/CardMedia";
 
 
 const SelectedMovies = styled(Paper)(({theme}) => ({
@@ -32,7 +31,6 @@ export const Home = () => {
         return <div>ERROR</div>
     }
 
-    const totalCountPages = Math.floor(data?.movies?.totalPages / 20)
 
     return (
         <Box sx={{flexGrow: 1, marginTop: 2}}>
@@ -63,7 +61,7 @@ export const Home = () => {
                                 }
                                 <Stack spacing={2} sx={{margin: 3}}>
                                     <Pagination
-                                        count={totalCountPages}
+                                        count={500}
                                         page={page}
                                         onChange={(event, page) => setPage(page)}
                                     />
@@ -76,7 +74,8 @@ export const Home = () => {
                     <SelectedMovies>
                         {
                             !selectedMovies.length &&
-                            <Typography sx={{textAlign:'center',paddingTop:5}} component="div" variant="h5" >No selected movies...
+                            <Typography sx={{textAlign: 'center', paddingTop: 5}}
+                                        component="div" variant="h5">No selected movies...
                             </Typography>
                         }
                         {
