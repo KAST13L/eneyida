@@ -7,6 +7,8 @@ import {MovieCard, MovieCardSelected} from "../../components";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import {useMovies} from "../../hooks/useMovies";
+import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
 
 
 const SelectedMovies = styled(Paper)(({theme}) => ({
@@ -18,7 +20,6 @@ const SelectedMovies = styled(Paper)(({theme}) => ({
     position: 'sticky',
     top: theme.spacing(2),
 }))
-
 
 export const Home = () => {
 
@@ -74,13 +75,20 @@ export const Home = () => {
                 <Grid item xs={12} md={4}>
                     <SelectedMovies>
                         {
-                            selectedMovies.map(el => <MovieCardSelected key={el.title} movie={{
-                                    title: el.title,
-                                    posterPath: el.posterPath,
-                                    releaseDate: el.releaseDate,
-                                    genres: el.genres,
-                                    runtime: el.runtime
-                                }} onCardDelete={deleteMovie}/>)
+                            !selectedMovies.length &&
+                            <Typography sx={{textAlign:'center',paddingTop:5}} component="div" variant="h5" >No selected movies...
+                            </Typography>
+                        }
+                        {
+                            selectedMovies.map(el => <MovieCardSelected key={el.title}
+                                                                        movie={{
+                                                                            title: el.title,
+                                                                            posterPath: el.posterPath,
+                                                                            releaseDate: el.releaseDate,
+                                                                            genres: el.genres,
+                                                                            runtime: el.runtime
+                                                                        }}
+                                                                        onCardDelete={deleteMovie}/>)
                         }
                     </SelectedMovies>
                 </Grid>
