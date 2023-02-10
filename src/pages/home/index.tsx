@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Box, Button, Grid, Input, Paper, styled, TextField} from "@mui/material";
+import {Box, Button, Grid, Paper, styled, TextField} from "@mui/material";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "./queries";
-import {MovieType} from "../../stories/stub";
+import {MovieTypeForStories} from "../../stories/stub";
 import {MovieCard, MovieCardSelected} from "../../components";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
@@ -52,7 +52,7 @@ export const Home = () => {
                                     loading && "Loading..."
                                 }
                                 {
-                                    data && data.movies.results.map((el: MovieType) =>
+                                    data && data.movies.results.map((el: MovieTypeForStories) =>
                                         <Grid item xs={12} sm={6} md={4} lg={3}
                                               key={el.title}>
                                             <MovieCard movie={{
@@ -99,9 +99,11 @@ export const Home = () => {
                             }
                         </MoviesList>
                         {
-                            selectedMovies.length && <Box sx={{display:'flex', margin:1}}>
-                            <TextField variant={'outlined'}  fullWidth placeholder={'enter a title for the movie list'}/>
-                            <Button variant={'contained'}>OK</Button>
+                            selectedMovies.length &&
+                            <Box sx={{display: 'flex', margin: 1}}>
+                                <TextField variant={'outlined'} fullWidth
+                                           placeholder={'enter a title for the movie list'}/>
+                                <Button variant={'contained'}>OK</Button>
                             </Box>
                         }
                     </SelectedMovies>

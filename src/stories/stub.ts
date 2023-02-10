@@ -1,4 +1,4 @@
-export type MovieType =  {
+export type MovieTypeForStories =  {
     title: string,
     posterPath: string,
         releaseDate: string,
@@ -9,7 +9,7 @@ export type MovieType =  {
         runtime?: number
 }
 
-export const movies: MovieType[] = [
+export const movies: MovieTypeForStories[] = [
     {
         title: 'Sonic. The legend of white space',
         releaseDate: 'Apr 08, 2022',

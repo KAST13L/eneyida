@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Tooltip, Typography} from "@mui/material";
 import {RightTopButtonMenu} from "../RightTopMenu";
-import {MovieType} from "../../stories/stub";
+import {MovieTypeForStories} from "../../stories/stub";
 
 
 interface MovieCardPropsType {
@@ -10,7 +10,7 @@ interface MovieCardPropsType {
         posterPath: string,
         releaseDate: string
     },
-    onSelectClick: (movie: MovieType) => void
+    onSelectClick: (movie: MovieTypeForStories) => void
 }
 
 export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) => {
@@ -20,7 +20,7 @@ export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) 
 
     return (
         <Card sx={{maxWidth: 250, position: 'relative'}}>
-            <RightTopButtonMenu callback={(movie: MovieType) => onSelectClick(movie)}
+            <RightTopButtonMenu callback={(movie: MovieTypeForStories) => onSelectClick(movie)}
                                 movie={movie}/>
             <Tooltip title={'Click to Add'} followCursor enterDelay={500} enterNextDelay={500} >
                 <CardMedia
