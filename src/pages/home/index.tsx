@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Grid, Paper, styled} from "@mui/material";
+import {Box, Button, Grid, Input, Paper, styled, TextField} from "@mui/material";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "./queries";
 import {MovieType} from "../../stories/stub";
@@ -15,13 +15,16 @@ const SelectedMovies = styled(Paper)(({theme}) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     color: theme.palette.text.secondary,
-    height: 'calc(100vh - 30px)',
+    height: 'calc(100vh - 130px)',
     position: 'sticky',
     top: theme.spacing(2),
 }))
 
 export const Home = () => {
 
+    const MoviesList = styled(Stack)(({theme}) => ({
+        height: '90%'
+    }))
     const [page, setPage] = useState(1)
     const {loading, error, data} = useQuery(MOVIES_QUERY, {variables: {page}})
 
@@ -72,6 +75,7 @@ export const Home = () => {
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <SelectedMovies>
+
                         {
                             !selectedMovies.length &&
                             <Typography sx={{textAlign: 'center', paddingTop: 5}}
@@ -79,19 +83,27 @@ export const Home = () => {
                                 movies...
                             </Typography>
                         }
-
+                        <MoviesList>
+                            {
+                                selectedMovies.map(el => <MovieCardSelected
+                                    key={el.title}
+                                    movie={{
+                                        title: el.title,
+                                        posterPath: el.posterPath,
+                                        releaseDate: el.releaseDate,
+                                        genres: el.genres,
+                                        runtime: el.runtime
+                                    }}
+                                    onCardDelete={deleteMovie}/>)
+                            }
+                        </MoviesList>
                         {
-                            selectedMovies.map(el => <MovieCardSelected
-                                key={el.title}
-                                movie={{
-                                    title: el.title,
-                                    posterPath: el.posterPath,
-                                    releaseDate: el.releaseDate,
-                                    genres: el.genres,
-                                    runtime: el.runtime
-                                }}
-                                onCardDelete={deleteMovie}/>)
-                        }                                                </SelectedMovies>
+                            selectedMovies.length && <Box sx={{display:'flex', margin:1}}>
+                            <TextField variant={'outlined'}  fullWidth placeholder={'enter a title for the movie list'}/>
+                            <Button variant={'contained'}>OK</Button>
+                            </Box>
+                        }
+                    </SelectedMovies>
                 </Grid>
             </Grid>
         </Box>
