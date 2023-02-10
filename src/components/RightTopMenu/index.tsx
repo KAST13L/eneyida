@@ -1,11 +1,11 @@
 import React from 'react';
 import {IconButton, Menu, MenuItem} from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import {MovieTypeForStories} from "../../stories/stub";
+import {MovieType} from "../../types/types";
 
 interface RightTopButtonPropsType {
-    callback: (movie:MovieTypeForStories) => void
-    movie: MovieTypeForStories
+    callback: (movie:MovieType) => void
+    movie: MovieType
 }
 
 export const RightTopButtonMenu: React.FC<RightTopButtonPropsType> = ({callback, movie}) => {

@@ -3,14 +3,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {MovieTypeForStories} from "../../stories/stub";
 import {Box, IconButton, Paper} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import {MovieType} from "../../types/types";
 
 
 interface MovieCardSelectedPropsType {
-    movie: MovieTypeForStories
-    onCardDelete: (movie: MovieTypeForStories) => void
+    movie: MovieType
+    onCardDelete: (movie: MovieType) => void
 }
 
 export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({
@@ -45,7 +45,7 @@ export const MovieCardSelected: React.FC<MovieCardSelectedPropsType> = ({
                         </Typography>
                     </CardContent>
                     <IconButton
-                        onClick={ () => onCardDelete(movie) }
+                        onClick={() => onCardDelete(movie)}
                         sx={{
                             position: 'absolute',
                             right: 5,

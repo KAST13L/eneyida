@@ -1,13 +1,13 @@
 import React, {useCallback, useState} from 'react';
-import {MovieTypeForStories} from "../stories/stub";
+import {MovieType} from "../types/types";
 
 const MAX_SELECTED_MOVIES = 20;
 
 export const useMovies = () => {
 
-    const [selectedMovies, setSelectedMovies] = useState<MovieTypeForStories[]>([])
+    const [selectedMovies, setSelectedMovies] = useState<MovieType[]>([])
 
-    const selectMovie = useCallback((movie: MovieTypeForStories) => {
+    const selectMovie = useCallback((movie: MovieType) => {
 
         const selectedMoviesLength = selectedMovies.length
         const isNewMovie = !selectedMovies.find(({title}) => title === movie.title)
@@ -18,7 +18,7 @@ export const useMovies = () => {
 
     }, [selectedMovies])
 
-    const deleteMovie = useCallback((movie: MovieTypeForStories) => {
+    const deleteMovie = useCallback((movie: MovieType) => {
         setSelectedMovies(selectedMovies.filter(({title}) => title !== movie.title))
     }, [selectedMovies])
 

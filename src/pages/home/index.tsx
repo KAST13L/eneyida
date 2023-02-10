@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import {Box, Button, Grid, Paper, styled, TextField} from "@mui/material";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "./queries";
-import {MovieTypeForStories} from "../../stories/stub";
 import {MovieCard, MovieCardSelected} from "../../components";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import {useMovies} from "../../hooks/useMovies";
 import Typography from "@mui/material/Typography";
+import {MovieType} from "../../types/types";
 
 
 const SelectedMovies = styled(Paper)(({theme}) => ({
@@ -52,14 +52,10 @@ export const Home = () => {
                                     loading && "Loading..."
                                 }
                                 {
-                                    data && data.movies.results.map((el: MovieTypeForStories) =>
+                                    data && data.movies.results.map((el: MovieType) =>
                                         <Grid item xs={12} sm={6} md={4} lg={3}
-                                              key={el.title}>
-                                            <MovieCard movie={{
-                                                title: el.title,
-                                                posterPath: el.posterPath,
-                                                releaseDate: el.releaseDate
-                                            }}
+                                              key={el.id}>
+                                            <MovieCard movie={{...el}}
                                                        onSelectClick={selectMovie}/>
                                         </Grid>)
                                 }
@@ -87,14 +83,8 @@ export const Home = () => {
                         <MoviesList>
                             {
                                 selectedMovies.map(el => <MovieCardSelected
-                                    key={el.title}
-                                    movie={{
-                                        title: el.title,
-                                        posterPath: el.posterPath,
-                                        releaseDate: el.releaseDate,
-                                        genres: el.genres,
-                                        runtime: el.runtime
-                                    }}
+                                    key={el.id}
+                                    movie={{...el}}
                                     onCardDelete={deleteMovie}/>)
                             }
                         </MoviesList>
