@@ -15,7 +15,7 @@ const SelectedMovies = styled(Paper)(({theme}) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     color: theme.palette.text.secondary,
-    height: 'calc(100vh - 130px)',
+    height: 'calc(100vh - 90px)',
     position: 'sticky',
     top: theme.spacing(2),
 }))
@@ -89,7 +89,7 @@ export const Home = () => {
                             }
                         </MoviesList>
                         {
-                            selectedMovies.length &&
+                            !!selectedMovies.length &&
                             <Box sx={{display: 'flex', margin: 1}}>
                                 <TextField variant={'outlined'} fullWidth
                                            placeholder={'enter a title for the movie list'}/>
