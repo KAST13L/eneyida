@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {MovieType} from "../types/types";
+import {MovieType} from "../../types/types";
 
 const MAX_SELECTED_MOVIES = 20;
 

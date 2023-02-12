@@ -5,7 +5,7 @@ import {MOVIES_QUERY} from "./queries";
 import {MovieCard, MovieCardSelected} from "../../components";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
-import {useMovies} from "../../hooks/useMovies";
+import {useMovies} from "../../hooks/useMovies/useMovies";
 import Typography from "@mui/material/Typography";
 import {MovieType} from "../../types/types";
 
