@@ -22,7 +22,7 @@ const SelectedMovies = styled(Paper)(({theme}) => ({
 
 export const Home = () => {
 
-    const MoviesList = styled(Stack)(({theme}) => ({
+    const MoviesList = styled(Stack)(() => ({
         overflow: 'scroll',
         height: '90%'
     }))
