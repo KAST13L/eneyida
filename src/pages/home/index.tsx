@@ -9,7 +9,6 @@ import {useMovies} from "../../hooks/useMovies";
 import Typography from "@mui/material/Typography";
 import {MovieType} from "../../types/types";
 
-
 const SelectedMovies = styled(Paper)(({theme}) => ({
     backgroundColor: '#fff',
     ...theme.typography.body2,
@@ -28,13 +27,11 @@ export const Home = () => {
     }))
     const [page, setPage] = useState(1)
     const {loading, error, data} = useQuery(MOVIES_QUERY, {variables: {page}})
-
     const {selectedMovies, selectMovie, deleteMovie} = useMovies()
 
     if (error) {
         return <div>ERROR</div>
     }
-
 
     return (
         <Box sx={{flexGrow: 1, marginTop: 2}}>
