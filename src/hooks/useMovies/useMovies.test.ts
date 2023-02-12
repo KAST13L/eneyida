@@ -1,6 +1,7 @@
 import {act, renderHook} from '@testing-library/react-hooks';
 import {useMovies} from "./useMovies";
 import {movies} from "../../stories/stub";
+import {MAX_SELECTED_MOVIES} from "../../variables";
 
 describe('test useMovies hook', () => {
 
@@ -41,4 +42,26 @@ describe('test useMovies hook', () => {
         expect(result.current.selectedMovies.length).toBe(1)
     });
 
+    it('should add no more movies than it is allowed', () => {
+        const {result} = renderHook(() => useMovies())
+
+        for (let i = 0; i < MAX_SELECTED_MOVIES; i++) {
+            act(() => {
+                result.current.selectMovie({
+                    ...basicMovie,
+                    id: 'id: '+ i
+                })
+            })
+        }
+
+/*
+        expect(result.current.selectedMovies.length).toBe(20)
+*/
+        act(()=>{
+            result.current.selectMovie({
+                ...basicMovie,
+                id: 'other id'
+            })
+        })
+    })
 })
