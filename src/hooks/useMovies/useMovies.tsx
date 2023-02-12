@@ -1,7 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {MovieType} from "../../types/types";
-
-const MAX_SELECTED_MOVIES = 20;
+import {MAX_SELECTED_MOVIES} from "../../variables";
 
 export const useMovies = () => {
 
