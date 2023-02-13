@@ -65,4 +65,24 @@ describe('test useMovies hook', () => {
 
         expect(result.current.selectedMovies.length).toBe(MAX_SELECTED_MOVIES)
     })
+
+    it('should delete movie by id',  () => {
+        const {result} = renderHook(() => useMovies())
+
+        for (let i = 0; i < MAX_SELECTED_MOVIES; i++) {
+            act(() => {
+                result.current.selectMovie({
+                    ...basicMovie,
+                    id: `id:${i}`
+                })
+            })
+        }
+
+        act(() => {
+            result.current.deleteMovie(result.current.selectedMovies[2])
+        })
+
+        expect(result.current.selectedMovies.some( movie => movie.id === 'id:17')).toBeFalsy()
+    });
+
 })
