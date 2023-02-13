@@ -79,9 +79,11 @@ describe('test useMovies hook', () => {
             })
         }
 
+        const movieForDeleted = result.current.selectedMovies[2]
+
         act(() => {
-            result.current.deleteMovie(result.current.selectedMovies[2])
+            result.current.deleteMovie(movieForDeleted)
         })
-        expect(result.current.selectedMovies.some(movie => movie.id === 'id:17')).toBeFalsy()
+        expect(result.current.selectedMovies.some(movie => movie.id === movieForDeleted.id)).toBeFalsy()
     });
 })
