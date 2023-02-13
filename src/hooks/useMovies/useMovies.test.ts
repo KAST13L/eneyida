@@ -9,6 +9,7 @@ describe('test useMovies hook', () => {
 
     it('should select movie', () => {
         const {result} = renderHook(() => useMovies())
+
         act(() => {
             result.current.selectMovie(basicMovie)
         })
@@ -18,6 +19,7 @@ describe('test useMovies hook', () => {
 
     it('should delete movie', () => {
         const {result} = renderHook(() => useMovies())
+
         act(() => {
             result.current.selectMovie(basicMovie)
         })
@@ -31,6 +33,7 @@ describe('test useMovies hook', () => {
 
     it('should select movie only once', () => {
         const {result} = renderHook(() => useMovies())
+
         act(() => {
             result.current.selectMovie(basicMovie)
         })
@@ -53,20 +56,18 @@ describe('test useMovies hook', () => {
                 })
             })
         }
-
         expect(result.current.selectedMovies.length).toBe(MAX_SELECTED_MOVIES)
 
-        act(()=>{
+        act(() => {
             result.current.selectMovie({
                 ...basicMovie,
                 id: 'other id'
             })
         })
-
         expect(result.current.selectedMovies.length).toBe(MAX_SELECTED_MOVIES)
     })
 
-    it('should delete movie by id',  () => {
+    it('should delete movie by id', () => {
         const {result} = renderHook(() => useMovies())
 
         for (let i = 0; i < MAX_SELECTED_MOVIES; i++) {
@@ -81,8 +82,6 @@ describe('test useMovies hook', () => {
         act(() => {
             result.current.deleteMovie(result.current.selectedMovies[2])
         })
-
-        expect(result.current.selectedMovies.some( movie => movie.id === 'id:17')).toBeFalsy()
+        expect(result.current.selectedMovies.some(movie => movie.id === 'id:17')).toBeFalsy()
     });
-
 })
