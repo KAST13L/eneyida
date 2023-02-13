@@ -9,7 +9,7 @@ export const useMovies = () => {
     const selectMovie = useCallback((movie: MovieType) => {
 
         const selectedMoviesLength = selectedMovies.length
-        const isNewMovie = !selectedMovies.find(({title}) => title === movie.title)
+        const isNewMovie = !selectedMovies.find(({id}) => id === movie.id)
 
         if (isNewMovie && selectedMoviesLength < MAX_SELECTED_MOVIES) {
             setSelectedMovies([movie, ...selectedMovies])
@@ -18,7 +18,7 @@ export const useMovies = () => {
     }, [selectedMovies])
 
     const deleteMovie = useCallback((movie: MovieType) => {
-        setSelectedMovies(selectedMovies.filter(({title}) => title !== movie.title))
+        setSelectedMovies(selectedMovies.filter(({id}) => id !== movie.id))
     }, [selectedMovies])
 
 

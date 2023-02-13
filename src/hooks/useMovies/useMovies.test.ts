@@ -5,7 +5,7 @@ import {MAX_SELECTED_MOVIES} from "../../variables";
 
 describe('test useMovies hook', () => {
 
-    const basicMovie = movies[0]
+    const basicMovie = movies[0];
 
     it('should select movie', () => {
         const {result} = renderHook(() => useMovies())
@@ -48,20 +48,21 @@ describe('test useMovies hook', () => {
         for (let i = 0; i < MAX_SELECTED_MOVIES; i++) {
             act(() => {
                 result.current.selectMovie({
-                    ...basicMovie,
-                    id: 'id: '+ i
+                    ...{...basicMovie},
+                    id: `id:${i}`
                 })
             })
         }
 
-/*
-        expect(result.current.selectedMovies.length).toBe(20)
-*/
+        expect(result.current.selectedMovies.length).toBe(MAX_SELECTED_MOVIES)
+
         act(()=>{
             result.current.selectMovie({
                 ...basicMovie,
                 id: 'other id'
             })
         })
+
+        expect(result.current.selectedMovies.length).toBe(MAX_SELECTED_MOVIES)
     })
 })
