@@ -22,6 +22,7 @@ describe('test useMovies hook', () => {
         act(() => {
             result.current.selectMovie(basicMovie)
         })
+
         expect(result.current.selectedMovies.length).toBeTruthy()
 
         act(() => {
