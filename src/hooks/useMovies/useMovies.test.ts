@@ -4,7 +4,6 @@ import {movies} from "../../stories/stub";
 import {MAX_SELECTED_MOVIES} from "../../variables";
 
 describe('test useMovies hook', () => {
-
     const basicMovie = movies[0];
 
     it('should select movie', () => {
