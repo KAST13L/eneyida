@@ -12,7 +12,6 @@ describe('test useMovies hook', () => {
         act(() => {
             result.current.selectMovie(basicMovie)
         })
-
         expect(result.current.selectedMovies[0].title).toBe('Title movie')
         expect(result.current.selectedMovies.length).toBe(1)
     });
