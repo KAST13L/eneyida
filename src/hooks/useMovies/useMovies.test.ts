@@ -27,9 +27,6 @@ describe('test useMovies hook', () => {
         act(() => {
             result.current.deleteMovie(basicMovie)
         })
-
-
-
         expect(result.current.selectedMovies.length).toBeFalsy()
     });
 
