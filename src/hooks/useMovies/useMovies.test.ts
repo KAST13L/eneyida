@@ -24,7 +24,6 @@ describe('test useMovies hook', () => {
         })
         expect(result.current.selectedMovies.length).toBeTruthy()
 
-
         act(() => {
             result.current.deleteMovie(basicMovie)
         })
@@ -86,4 +85,4 @@ describe('test useMovies hook', () => {
         })
         expect(result.current.selectedMovies.some(movie => movie.id === movieForDeleted.id)).toBeFalsy()
     });
-})
+});
