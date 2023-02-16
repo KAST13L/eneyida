@@ -27,6 +27,7 @@ describe('test useMovies hook', () => {
 
 
 
+
         act(() => {
             result.current.deleteMovie(basicMovie)
         })
