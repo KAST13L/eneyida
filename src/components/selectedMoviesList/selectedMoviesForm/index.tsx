@@ -6,9 +6,16 @@ export const SelectedMoviesForm = () => {
     return (
         <Form
             onSubmit={() => {}}
-            render={({handleSubmit, form, values}) => (
+            validate={values => {
+                const errors: {listTitle?: string} = {}
+                if (!values.username) {
+                    errors.listTitle = 'Required'
+                }
+                return errors
+            }}
+            render={({handleSubmit}) => (
                 <form onSubmit={handleSubmit}>
-                    <Field name="titleOfList">
+                    <Field name="listTitle">
                         {({input, meta}) => (
                             <Box sx={{display: 'flex'}}>
                                 <TextField {...input} variant={'outlined'} fullWidth
