@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Tooltip, Typography} from "@mui/material";
-import {RightTopButtonMenu} from "../RightTopMenu";
-import {MovieType} from "../../types/types";
+import {RightTopButtonMenu} from "../../RightTopMenu";
+import {MovieType} from "../../../types/types";
 
 
 interface MovieCardPropsType {

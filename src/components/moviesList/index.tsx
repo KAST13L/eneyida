@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Box, Grid, Paper} from "@mui/material";
 import {MovieType} from "../../types/types";
-import {MovieCard} from "../movieCard";
+import {MovieCard} from "./movieCard";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import {useQuery} from "@apollo/client";

@@ -1,9 +1,9 @@
 import React from 'react';
 import Typography from "@mui/material/Typography";
 import {MoviesList, SelectedMovies} from "../../styled/styled";
-import {MovieCardSelected} from "../movieCardSelected";
+import {MovieCardSelected} from "./movieCardSelected";
 import {MovieType} from "../../types/types";
-import {SelectedMoviesForm} from "../selectedMoviesForm";
+import {SelectedMoviesForm} from "./selectedMoviesForm";
 
 interface SelectedMoviesListPropsType {
     selectedMovies: any[]

@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {Box, IconButton, Paper} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import {MovieType} from "../../types/types";
+import {MovieType} from "../../../types/types";
 
 
 interface MovieCardSelectedPropsType {

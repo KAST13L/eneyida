@@ -1,6 +1,6 @@
 import {Navigation} from './navigation';
-import {MovieCard} from './movieCard';
-import {MovieCardSelected} from './movieCardSelected';
+import {MovieCard} from './moviesList/movieCard';
+import {MovieCardSelected} from './selectedMoviesList/movieCardSelected';
 import {RightTopButtonMenu} from './RightTopMenu';
 
 export {
