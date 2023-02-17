@@ -3,7 +3,6 @@ import {Box, Grid, Paper} from "@mui/material";
 import {SelectedMoviesList} from "../../components/selectedMoviesList";
 import {MoviesList} from "../../components/moviesList";
 
-
 export const Home = () => {
 
     return (
