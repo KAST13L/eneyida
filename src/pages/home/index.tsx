@@ -14,7 +14,7 @@ export const Home = () => {
 
     const [page, setPage] = useState(1)
     const {loading, error, data} = useQuery(MOVIES_QUERY, {variables: {page}})
-    const {selectedMovies, selectMovie, deleteMovie} = useMovies()
+    const {selectMovie} = useMovies()
 
     if (error) {
         return <div>ERROR</div>
