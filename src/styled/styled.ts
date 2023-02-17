@@ -11,7 +11,7 @@ export const SelectedMovies = styled(Paper)(({theme}) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     color: theme.palette.text.secondary,
-    height: 'calc(100vh - 90px)',
+    height: 'calc(100vh - 135px)',
     position: 'sticky',
     top: theme.spacing(2),
 }))
