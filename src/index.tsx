@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 import './index.css';
 import {App} from './App';
 import {HashRouter} from "react-router-dom";
@@ -13,17 +13,14 @@ import {
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
 });
-
 const client = new ApolloClient({
     link: httpLink,
     cache: new InMemoryCache(),
     connectToDevTools: true
 });
 
-const root = ReactDOM.createRoot(
-    document.getElementById('eneyida') as HTMLElement
-);
-
+const container = document.getElementById('eneyida');
+const root = createRoot(container!);
 root.render(
     <HashRouter>
         <ApolloProvider client={client}>
