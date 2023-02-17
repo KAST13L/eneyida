@@ -19,10 +19,9 @@ export const SelectedMoviesForm = () => {
                         {({input, meta}) => (
                             <Box sx={{display: 'flex'}}>
                                 <TextField {...input} variant={'outlined'} fullWidth
-                                           placeholder={'enter a title for the movie list'}/>
+                                           placeholder={'enter a title for the movie list'}
+                                />
                                 <Button variant={'contained'}>OK</Button>
-                                {meta.error && meta.touched &&
-                                    <span>{meta.error}</span>}
                             </Box>
                         )}
                     </Field>
