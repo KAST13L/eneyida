@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Button, Grid, Paper, styled, TextField} from "@mui/material";
+import {Box, Button, Grid, Paper, TextField} from "@mui/material";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "./queries";
 import {MovieCard, MovieCardSelected} from "../../components";
@@ -8,17 +8,8 @@ import Pagination from "@mui/material/Pagination";
 import {useMovies} from "../../hooks/useMovies/useMovies";
 import Typography from "@mui/material/Typography";
 import {MovieType} from "../../types/types";
-import { MoviesList } from '../../styled/styled';
+import {MoviesList, SelectedMovies} from '../../styled/styled';
 
-const SelectedMovies = styled(Paper)(({theme}) => ({
-    backgroundColor: '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    color: theme.palette.text.secondary,
-    height: 'calc(100vh - 90px)',
-    position: 'sticky',
-    top: theme.spacing(2),
-}))
 
 export const Home = () => {
 
