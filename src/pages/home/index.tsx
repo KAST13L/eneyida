@@ -8,7 +8,6 @@ export const Home = () => {
 
     const {selectedMovies, deleteMovie, selectMovie} = useMovies()
 
-
     return (
         <Box sx={{flexGrow: 1, marginTop: 2}}>
             <Grid container spacing={2}>
