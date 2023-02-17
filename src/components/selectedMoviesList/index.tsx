@@ -3,11 +3,14 @@ import Typography from "@mui/material/Typography";
 import {MoviesList, SelectedMovies} from "../../styled/styled";
 import {MovieCardSelected} from "../movieCardSelected";
 import {Box, Button, TextField} from "@mui/material";
-import {useMovies} from "../../hooks/useMovies/useMovies";
+import {MovieType} from "../../types/types";
 
-export const SelectedMoviesList = () => {
+interface SelectedMoviesListPropsType {
+    selectedMovies: any[]
+    deleteMovie: (movie: MovieType) => void
+}
 
-    const {selectedMovies, deleteMovie} = useMovies()
+export const SelectedMoviesList: React.FC<SelectedMoviesListPropsType> = ({selectedMovies, deleteMovie}) => {
 
     return (
         <SelectedMovies>

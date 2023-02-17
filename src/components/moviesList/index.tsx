@@ -6,13 +6,15 @@ import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "../../pages/home/queries";
-import {useMovies} from "../../hooks/useMovies/useMovies";
 
-export const MoviesList = () => {
+interface MoviesListPropsType {
+    selectMovie: (movie: MovieType) => void
+}
+
+export const MoviesList: React.FC<MoviesListPropsType> = ({selectMovie}) => {
 
     const [page, setPage] = useState(1)
     const {loading, error, data} = useQuery(MOVIES_QUERY, {variables: {page}})
-    const {selectMovie} = useMovies()
 
     if (error) {
         return <div>ERROR</div>

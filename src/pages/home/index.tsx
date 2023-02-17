@@ -2,8 +2,12 @@ import React from 'react';
 import {Box, Grid, Paper} from "@mui/material";
 import {SelectedMoviesList} from "../../components/selectedMoviesList";
 import {MoviesList} from "../../components/moviesList";
+import {useMovies} from "../../hooks/useMovies/useMovies";
 
 export const Home = () => {
+
+    const {selectedMovies, deleteMovie, selectMovie} = useMovies()
+
 
     return (
         <Box sx={{flexGrow: 1, marginTop: 2}}>
@@ -16,11 +20,12 @@ export const Home = () => {
                 </Grid>
 
                 <Grid item xs={12} md={8}>
-                    <MoviesList/>
+                    <MoviesList selectMovie={selectMovie}/>
                 </Grid>
 
                 <Grid item xs={12} md={4}>
-                    <SelectedMoviesList/>
+                    <SelectedMoviesList selectedMovies={selectedMovies}
+                                        deleteMovie={deleteMovie}/>
                 </Grid>
 
             </Grid>
