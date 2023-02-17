@@ -33,11 +33,13 @@ export const Home = () => {
     return (
         <Box sx={{flexGrow: 1, marginTop: 2}}>
             <Grid container spacing={2}>
+
                 <Grid item xs={12}>
                     <Paper elevation={5}>
                         filters section
                     </Paper>
                 </Grid>
+
                 <Grid item xs={12} md={8}>
                     <Paper elevation={5}>
                         <Box sx={{flexGrow: 1, padding: 1}}>
@@ -64,6 +66,7 @@ export const Home = () => {
                         </Box>
                     </Paper>
                 </Grid>
+
                 <Grid item xs={12} md={4}>
                     <SelectedMovies>
 
@@ -92,6 +95,7 @@ export const Home = () => {
                         }
                     </SelectedMovies>
                 </Grid>
+
             </Grid>
         </Box>
     );
