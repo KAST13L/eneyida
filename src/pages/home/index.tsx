@@ -8,6 +8,7 @@ import Pagination from "@mui/material/Pagination";
 import {useMovies} from "../../hooks/useMovies/useMovies";
 import Typography from "@mui/material/Typography";
 import {MovieType} from "../../types/types";
+import { MoviesList } from '../../styled/styled';
 
 const SelectedMovies = styled(Paper)(({theme}) => ({
     backgroundColor: '#fff',
@@ -21,10 +22,6 @@ const SelectedMovies = styled(Paper)(({theme}) => ({
 
 export const Home = () => {
 
-    const MoviesList = styled(Stack)(() => ({
-        overflow: 'auto',
-        height: '90%'
-    }))
     const [page, setPage] = useState(1)
     const {loading, error, data} = useQuery(MOVIES_QUERY, {variables: {page}})
     const {selectedMovies, selectMovie, deleteMovie} = useMovies()
