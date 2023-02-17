@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
-import {Box, Button, Grid, Paper, TextField} from "@mui/material";
+import {Box, Grid, Paper} from "@mui/material";
 import {useQuery} from "@apollo/client";
 import {MOVIES_QUERY} from "./queries";
-import {MovieCard, MovieCardSelected} from "../../components";
+import {MovieCard} from "../../components";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import {useMovies} from "../../hooks/useMovies/useMovies";
-import Typography from "@mui/material/Typography";
 import {MovieType} from "../../types/types";
-import {MoviesList, SelectedMovies} from '../../styled/styled';
+import {SelectedMoviesList} from "../../components/selectedMoviesList";
 
 
 export const Home = () => {
@@ -59,32 +58,7 @@ export const Home = () => {
                 </Grid>
 
                 <Grid item xs={12} md={4}>
-                    <SelectedMovies>
-
-                        {
-                            !selectedMovies.length &&
-                            <Typography sx={{textAlign: 'center', paddingTop: 5}}
-                                        component="div" variant="h5">No selected
-                                movies...
-                            </Typography>
-                        }
-                        <MoviesList>
-                            {
-                                selectedMovies.map(el => <MovieCardSelected
-                                    key={el.id}
-                                    movie={{...el}}
-                                    onCardDelete={deleteMovie}/>)
-                            }
-                        </MoviesList>
-                        {
-                            !!selectedMovies.length &&
-                            <Box sx={{display: 'flex', margin: 1}}>
-                                <TextField variant={'outlined'} fullWidth
-                                           placeholder={'enter a title for the movie list'}/>
-                                <Button variant={'contained'}>OK</Button>
-                            </Box>
-                        }
-                    </SelectedMovies>
+                    <SelectedMoviesList/>
                 </Grid>
 
             </Grid>
