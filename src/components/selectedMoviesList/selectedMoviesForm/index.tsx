@@ -17,7 +17,6 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
     const onSubmit = ({listName}: OnSubmitSelectedMoviesFormPropsType) => {
         const ids = selectedMovies.map(el => el.id)
         const link = `${window.location.host}/recommend?title=${listName}&ids=${ids.join()}`
-        debugger
     }
 
     return (
@@ -34,11 +33,16 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
                 <form onSubmit={handleSubmit}>
                     <Field name="listName">
                         {({input, meta}) => (
-                            <Box sx={{display: 'flex'}}>
+                            <Box sx={{display: 'flex', position: 'relative'}}>
                                 <TextField {...input} variant={'outlined'} fullWidth
                                            placeholder={'enter a title for the movie list'}
                                 />
-                                    {meta.error && meta.touched && <Typography sx={{color:'red'}}>{meta.error}</Typography>}
+                                {meta.error && meta.touched && <Typography sx={{
+                                    color: 'red',
+                                    position:'absolute',
+                                    right:'70px',
+                                    top:'15px'
+                                }}>{meta.error}</Typography>}
                                 <Button variant={'contained'} type={'submit'}>OK</Button>
                             </Box>
                         )}
