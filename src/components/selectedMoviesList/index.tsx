@@ -33,7 +33,7 @@ export const SelectedMoviesList: React.FC<SelectedMoviesListPropsType> = ({
                 }
             </MoviesList>
             {
-                !!selectedMovies.length && <SelectedMoviesForm/>
+                !!selectedMovies.length && <SelectedMoviesForm selectedMovies={selectedMovies}/>
             }
         </SelectedMovies>
     );
