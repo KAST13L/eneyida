@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
@@ -10,7 +11,6 @@ import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
 import Alert from "@mui/material/Alert";
 import CloseIcon from "@mui/icons-material/Close";
-import {useState} from "react";
 
 interface TextFieldForUrlPropsType {
     url: string
@@ -20,6 +20,12 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
 
     const [isOpenAlert, setIsOpenAlert] = useState(false)
 
+    if (isOpenAlert) {
+        setTimeout(() => {
+            setIsOpenAlert(false)
+        }, 2000)
+    }
+
     return (
         <>
             <Paper
@@ -27,7 +33,7 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
                 sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
             >
                 <InputBase sx={{ml: 1, flex: 1}} value={url}/>
-                <IconButton type="button" sx={{p: '10px'}}>
+                <IconButton href={url} target={'_blank'} sx={{p: '10px'}}>
                     <VisibilityIcon/>
                 </IconButton>
                 <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
@@ -55,7 +61,7 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
                         }
                         sx={{mb: 2}}
                     >
-                        Close me!
+                        Copied!
                     </Alert>
                 </Collapse>
             </Box>
