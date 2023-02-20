@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
 import Alert from "@mui/material/Alert";
 import CloseIcon from "@mui/icons-material/Close";
+import {CONFIRM_TIMEOUT} from "../../variables";
 
 interface TextFieldForUrlPropsType {
     url: string
@@ -20,11 +21,15 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
 
     const [isOpenAlert, setIsOpenAlert] = useState(false)
 
-    if (isOpenAlert) {
-        setTimeout(() => {
-            setIsOpenAlert(false)
-        }, 2000)
-    }
+    useEffect(()=>{
+        let timer: NodeJS.Timeout;
+        if (isOpenAlert) {
+            timer = setTimeout(() => {
+                setIsOpenAlert(false)
+            }, CONFIRM_TIMEOUT)
+        }
+        return () => clearTimeout(timer)
+    },[isOpenAlert])
 
     return (
         <>
