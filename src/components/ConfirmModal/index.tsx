@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import {TextFieldForUrl} from "../TextFieldForUrl";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -33,7 +34,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({url,onClose,open,
                        {title}
                     </Typography>
                     <Typography sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        <TextFieldForUrl/>
                     </Typography>
                 </Box>
             </Modal>
