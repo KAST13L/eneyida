@@ -34,7 +34,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({url,onClose,open,
                        {title}
                     </Typography>
                     <Typography sx={{ mt: 2 }}>
-                        <TextFieldForUrl/>
+                        <TextFieldForUrl url={url}/>
                     </Typography>
                 </Box>
             </Modal>
