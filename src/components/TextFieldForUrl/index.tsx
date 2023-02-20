@@ -29,6 +29,7 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
                     <ContentCopyIcon/>
                 </CopyToClipboard>
             </IconButton>
+
         </Paper>
     );
 }
