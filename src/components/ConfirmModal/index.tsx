@@ -33,9 +33,6 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                                                                   open,
                                                                   title
                                                               }) => {
-
-    const [isOpenAlert, setIsOpenAlert] = useState(false)
-
     return (
         <Modal
             open={open}
@@ -45,30 +42,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                 <Typography variant="h6" component="h2">
                     {title}
                 </Typography>
-                <Typography sx={{mt: 2}}>
-                    <TextFieldForUrl url={url}/>
-                </Typography>
-                {/*<Box sx={{width: '100%'}}>
-                    <Collapse in={isOpenAlert}>
-                        <Alert
-                            action={
-                                <IconButton
-                                    aria-label="close"
-                                    color="inherit"
-                                    size="small"
-                                    onClick={() => {
-                                        setIsOpenAlert(false);
-                                    }}
-                                >
-                                    <CloseIcon fontSize="inherit"/>
-                                </IconButton>
-                            }
-                            sx={{mb: 2}}
-                        >
-                            Close me!
-                        </Alert>
-                    </Collapse>
-                </Box>*/}
+                <TextFieldForUrl url={url}/>
             </Box>
         </Modal>
     );

@@ -6,6 +6,11 @@ import IconButton from '@mui/material/IconButton';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import Box from "@mui/material/Box";
+import Collapse from "@mui/material/Collapse";
+import Alert from "@mui/material/Alert";
+import CloseIcon from "@mui/icons-material/Close";
+import {useState} from "react";
 
 interface TextFieldForUrlPropsType {
     url: string
@@ -13,23 +18,47 @@ interface TextFieldForUrlPropsType {
 
 export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
 
-    return (
-        <Paper
-            component="form"
-            sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
-        >
-            <InputBase sx={{ml: 1, flex: 1}} value={url}/>
-            <IconButton type="button" sx={{p: '10px'}}>
-                <VisibilityIcon/>
-            </IconButton>
-            <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
-            <IconButton color="primary" sx={{p: '10px'}}>
-                <CopyToClipboard text={url}
-                                 onCopy={() => alert('copied')}>
-                    <ContentCopyIcon/>
-                </CopyToClipboard>
-            </IconButton>
+    const [isOpenAlert, setIsOpenAlert] = useState(false)
 
-        </Paper>
+    return (
+        <>
+            <Paper
+                component="form"
+                sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
+            >
+                <InputBase sx={{ml: 1, flex: 1}} value={url}/>
+                <IconButton type="button" sx={{p: '10px'}}>
+                    <VisibilityIcon/>
+                </IconButton>
+                <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
+                <IconButton color="primary" sx={{p: '10px'}}>
+                    <CopyToClipboard text={url}
+                                     onCopy={() => setIsOpenAlert(true)}>
+                        <ContentCopyIcon/>
+                    </CopyToClipboard>
+                </IconButton>
+            </Paper>
+            <Box sx={{width: '100%'}}>
+                <Collapse in={isOpenAlert}>
+                    <Alert
+                        action={
+                            <IconButton
+                                aria-label="close"
+                                color="inherit"
+                                size="small"
+                                onClick={() => {
+                                    setIsOpenAlert(false);
+                                }}
+                            >
+                                <CloseIcon fontSize="inherit"/>
+                            </IconButton>
+                        }
+                        sx={{mb: 2}}
+                    >
+                        Close me!
+                    </Alert>
+                </Collapse>
+            </Box>
+        </>
     );
 }
