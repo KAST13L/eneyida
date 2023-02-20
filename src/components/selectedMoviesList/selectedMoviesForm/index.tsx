@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Box, Button, TextField} from "@mui/material";
 import {Field, Form} from 'react-final-form'
 import {MovieType} from "../../../types/types";
 import Typography from "@mui/material/Typography";
+import {ConfirmModal} from "../../ConfirmModal";
 
 interface OnSubmitSelectedMoviesFormPropsType {
     listName: string
@@ -14,9 +15,14 @@ interface SelectedMoviesFormPropsType {
 
 export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selectedMovies}) => {
 
+    const [link, setLink] = useState('')
+    const [listName, setListName] = useState('')
+
     const onSubmit = ({listName}: OnSubmitSelectedMoviesFormPropsType) => {
         const ids = selectedMovies.map(el => el.id)
         const link = `${window.location.host}/recommend?title=${listName}&ids=${ids.join()}`
+        setLink(link)
+        setListName(listName)
     }
 
     return (
@@ -47,6 +53,7 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
                             </Box>
                         )}
                     </Field>
+                    <ConfirmModal open={!!link} url={link} title={listName} onClose={()=>{}}/>
                 </form>
             )}
         />
