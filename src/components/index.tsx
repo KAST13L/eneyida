@@ -4,5 +4,5 @@ import {MovieCardSelected} from './selectedMoviesList/movieCardSelected';
 import {RightTopButtonMenu} from './RightTopMenu';
 
 export {
-    Navigation, MovieCard, MovieCardSelected,RightTopButtonMenu
+    Navigation, MovieCard, MovieCardSelected, RightTopButtonMenu
 }
