@@ -13,7 +13,6 @@ export const MovieCard: React.FC<MovieCardPropsType> = ({movie, onSelectClick}) 
 
     const {title, posterPath, releaseDate} = movie
 
-
     return (
         <Card sx={{maxWidth: 250, position: 'relative'}}>
             <RightTopButtonMenu callback={(movie: MovieType) => onSelectClick(movie)}

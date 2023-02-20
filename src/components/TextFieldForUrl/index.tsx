@@ -8,7 +8,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 interface TextFieldForUrlPropsType {
-    url:string
+    url: string
 }
 
 export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
@@ -16,20 +16,19 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
     return (
         <Paper
             component="form"
-            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+            sx={{p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
         >
-            <InputBase sx={{ ml: 1, flex: 1 }} value={url}/>
-            <IconButton type="button" sx={{ p: '10px' }}>
-                <VisibilityIcon />
+            <InputBase sx={{ml: 1, flex: 1}} value={url}/>
+            <IconButton type="button" sx={{p: '10px'}}>
+                <VisibilityIcon/>
             </IconButton>
-            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-
-            <CopyToClipboard text={url}
-                             onCopy={() => alert('copied')}>
-                <IconButton color="primary" sx={{ p: '10px' }}>
-                    <ContentCopyIcon />
-                </IconButton>
-            </CopyToClipboard>
+            <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
+            <IconButton color="primary" sx={{p: '10px'}}>
+                <CopyToClipboard text={url}
+                                 onCopy={() => alert('copied')}>
+                    <ContentCopyIcon/>
+                </CopyToClipboard>
+            </IconButton>
         </Paper>
     );
 }
