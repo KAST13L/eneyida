@@ -25,6 +25,10 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
         setListName(listName)
     }
 
+    const onCloseModal = () => {
+        setLink('')
+    }
+
     return (
         <Form
             onSubmit={onSubmit}
@@ -53,7 +57,7 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
                             </Box>
                         )}
                     </Field>
-                    <ConfirmModal open={!!link} url={link} title={listName} onClose={()=>{}}/>
+                    <ConfirmModal open={!!link} url={link} title={listName} onClose={onCloseModal}/>
                 </form>
             )}
         />

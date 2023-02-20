@@ -15,7 +15,6 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
@@ -49,7 +48,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                 <Typography sx={{mt: 2}}>
                     <TextFieldForUrl url={url}/>
                 </Typography>
-                <Box sx={{width: '100%'}}>
+                {/*<Box sx={{width: '100%'}}>
                     <Collapse in={isOpenAlert}>
                         <Alert
                             action={
@@ -69,7 +68,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                             Close me!
                         </Alert>
                     </Collapse>
-                </Box>
+                </Box>*/}
             </Box>
         </Modal>
     );
