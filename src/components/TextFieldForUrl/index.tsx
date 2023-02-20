@@ -5,6 +5,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 interface TextFieldForUrlPropsType {
     url:string
@@ -22,9 +23,13 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
                 <VisibilityIcon />
             </IconButton>
             <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-            <IconButton color="primary" sx={{ p: '10px' }}>
-                <ContentCopyIcon />
-            </IconButton>
+
+            <CopyToClipboard text={url}
+                             onCopy={() => alert('copied')}>
+                <IconButton color="primary" sx={{ p: '10px' }}>
+                    <ContentCopyIcon />
+                </IconButton>
+            </CopyToClipboard>
         </Paper>
     );
 }
