@@ -3,12 +3,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {TextFieldForUrl} from "../TextFieldForUrl";
-import Alert from '@mui/material/Alert';
-import IconButton from '@mui/material/IconButton';
-import Collapse from '@mui/material/Collapse';
-import Button from '@mui/material/Button';
-import CloseIcon from '@mui/icons-material/Close';
-import {useState} from "react";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -16,6 +10,7 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     bgcolor: 'background.paper',
+    borderRadius: '10px',
     boxShadow: 24,
     p: 4,
 };
