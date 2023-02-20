@@ -7,9 +7,14 @@ export default {
     component: ConfirmModal
 } as ComponentMeta<typeof ConfirmModal>;
 
-const Template: ComponentStory<typeof ConfirmModal> = () => <ConfirmModal/>;
+const Template: ComponentStory<typeof ConfirmModal> = (args) => <ConfirmModal {...args}/>;
 
 export const View = Template.bind({});
-View.args = {}
+View.args = {
+    open: true,
+    onClose: (isOpen) => {},
+    url: 'http://localhost:3000/recomend/blablablasiskaipiska',
+    title: 'My favorite films'
+}
 
 
