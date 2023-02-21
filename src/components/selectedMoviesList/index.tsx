@@ -5,12 +5,12 @@ import {MovieCardSelected} from "./movieCardSelected";
 import {MovieType} from "../../types/types";
 import {SelectedMoviesForm} from "./selectedMoviesForm";
 
-interface SelectedMoviesListPropsType {
+interface SelectedCardMoviesListPropsType {
     selectedMovies: any[]
     deleteMovie: (movie: MovieType) => void
 }
 
-export const SelectedMoviesList: React.FC<SelectedMoviesListPropsType> = ({
+export const SelectedCardMoviesList: React.FC<SelectedCardMoviesListPropsType> = ({
                                                                               selectedMovies,
                                                                               deleteMovie
                                                                           }) => {

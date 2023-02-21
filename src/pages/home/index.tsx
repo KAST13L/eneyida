@@ -1,8 +1,8 @@
 import React from 'react';
 import {Box, Grid, Paper} from "@mui/material";
-import {SelectedMoviesList} from "../../components/selectedMoviesList";
 import {MoviesList} from "../../components/moviesList";
 import {useMovies} from "../../hooks/useMovies/useMovies";
+import { SelectedCardMoviesList } from '../../components/selectedMoviesList';
 
 export const Home = () => {
 
@@ -11,7 +11,6 @@ export const Home = () => {
     return (
         <Box sx={{flexGrow: 1, marginTop: 2}}>
             <Grid container spacing={2}>
-
                 <Grid item xs={12}>
                     <Paper elevation={5}>
                         filters section
@@ -23,10 +22,9 @@ export const Home = () => {
                 </Grid>
 
                 <Grid item xs={12} md={4}>
-                    <SelectedMoviesList selectedMovies={selectedMovies}
+                    <SelectedCardMoviesList selectedMovies={selectedMovies}
                                         deleteMovie={deleteMovie}/>
                 </Grid>
-
             </Grid>
         </Box>
     );
