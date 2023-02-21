@@ -2,14 +2,14 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 import './index.css';
 import {App} from './App';
-import {HashRouter} from "react-router-dom";
+import {BrowserRouter, HashRouter} from "react-router-dom";
 import {GraphQlServer} from "./graphQlServer";
 
 
 const container = document.getElementById('eneyida');
 const root = createRoot(container!);
 root.render(
-    <HashRouter>
+    <BrowserRouter>
         <GraphQlServer component={<App/>}/>
-    </HashRouter>
+    </BrowserRouter>
 );
