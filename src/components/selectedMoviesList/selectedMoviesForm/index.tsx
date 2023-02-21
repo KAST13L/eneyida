@@ -29,38 +29,41 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
         setLink('')
     }
 
-    return (
-        <Form
-            onSubmit={onSubmit}
-            validate={values => {
-                const errors: { listName?: string } = {}
-                if (!values.listName) {
-                    errors.listName = 'Required'
-                }
-                return errors
-            }}
-            render={({handleSubmit}) => (
-                <form onSubmit={handleSubmit}>
-                    <Field name="listName">
-                        {({input, meta}) => (
-                            <Box sx={{display: 'flex', position: 'relative'}}>
-                                <TextField {...input} variant={'outlined'} fullWidth
-                                           placeholder={'enter a title for the movie list'}
-                                />
-                                {meta.error && meta.touched && <Typography sx={{
-                                    color: 'red',
-                                    position:'absolute',
-                                    right:'70px',
-                                    top:'15px'
-                                }}>{meta.error}</Typography>}
-                                <Button variant={'contained'} type={'submit'}>OK</Button>
-                            </Box>
-                        )}
-                    </Field>
-                    <ConfirmModal open={!!link} url={link} title={listName} onClose={onCloseModal}/>
-                </form>
-            )}
-        />
+    return (<Box sx={{m:'5px 0'}}>
+            <Form
+                onSubmit={onSubmit}
+                validate={values => {
+                    const errors: { listName?: string } = {}
+                    if (!values.listName) {
+                        errors.listName = 'Required'
+                    }
+                    return errors
+                }}
+                render={({handleSubmit}) => (
+                    <form onSubmit={handleSubmit}>
+                        <Field name="listName">
+                            {({input, meta}) => (
+                                <Box sx={{display: 'flex', position: 'relative'}}>
+                                    <TextField {...input} variant={'outlined'} fullWidth
+                                               placeholder={'enter a title for the movie list'}
+                                    />
+                                    {meta.error && meta.touched && <Typography sx={{
+                                        color: 'red',
+                                        position: 'absolute',
+                                        right: '70px',
+                                        top: '15px'
+                                    }}>{meta.error}</Typography>}
+                                    <Button variant={'contained'}
+                                            type={'submit'}>OK</Button>
+                                </Box>
+                            )}
+                        </Field>
+                        <ConfirmModal open={!!link} url={link} title={listName}
+                                      onClose={onCloseModal}/>
+                    </form>
+                )}
+            />
+        </Box>
     );
 };
 
