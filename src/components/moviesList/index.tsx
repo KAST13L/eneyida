@@ -20,13 +20,14 @@ export const MoviesList: React.FC<MoviesListPropsType> = ({selectMovie}) => {
         return <div>ERROR</div>
     }
 
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
     return (
         <Paper elevation={5}>
             <Box sx={{flexGrow: 1, padding: 1}}>
                 <Grid container spacing={2}>
-                    {
-                        loading && "Loading..."
-                    }
                     {
                         data && data.movies.results.map((el: MovieType) =>
                             <Grid item xs={12} sm={6} md={4} lg={3}
