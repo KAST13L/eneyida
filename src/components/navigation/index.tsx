@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {
     AppBar,
     Box,
@@ -18,6 +18,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {Link as RouterLink} from "react-router-dom";
+import {AppContext} from "../../context";
 
 export const Navigation = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -72,7 +73,6 @@ export const Navigation = () => {
                             Settings
                         </Button>
                     </Box>
-
                 </Toolbar>
             </AppBar>
             <Drawer
