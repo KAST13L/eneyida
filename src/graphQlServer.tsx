@@ -5,6 +5,7 @@ import {
     InMemoryCache
 } from "@apollo/client";
 import React, {ReactComponentElement} from "react";
+import {AppContextProvider} from "./context";
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
@@ -21,7 +22,9 @@ interface GraphQlServerPropsType {
 
 export const GraphQlServer = ({component}: GraphQlServerPropsType) => {
     return <ApolloProvider client={client}>
-        {component}
+        <AppContextProvider>
+            {component}
+        </AppContextProvider>
     </ApolloProvider>
 };
 
