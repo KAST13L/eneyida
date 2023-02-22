@@ -6,7 +6,6 @@ import {
 } from "@apollo/client";
 import React, {ReactComponentElement} from "react";
 import {AppContextProvider} from "./context";
-import {BrowserRouter} from "react-router-dom";
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
@@ -23,13 +22,11 @@ interface GraphQlServerPropsType {
 
 export const GraphQlServer = ({component}: GraphQlServerPropsType) => {
     return (
-        <AppContextProvider>
-            <ApolloProvider client={client}>
-                <BrowserRouter>
+        <ApolloProvider client={client}>
+            <AppContextProvider>
                     {component}
-                </BrowserRouter>
-            </ApolloProvider>
-        </AppContextProvider>
+            </AppContextProvider>
+        </ApolloProvider>
     )
 };
 
