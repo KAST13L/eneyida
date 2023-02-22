@@ -1,9 +1,9 @@
-import React, { useReducer, createContext } from 'react';
+import React, {useReducer, createContext} from 'react';
 import defaultContext from "./defaultContext";
 
-const AppContext = createContext({});
+const AppContext = createContext<any | null>(null) ;
 
-let reducer = (state: any, action: any): any => {
+let reducer = (state: { locale: string }, action: any ): any => {
     switch (action.type) {
         case "reset":
             return defaultContext;

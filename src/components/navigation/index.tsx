@@ -21,7 +21,8 @@ import {Link as RouterLink} from "react-router-dom";
 import {AppContext} from "../../context";
 
 export const Navigation = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const {state, dispatch} = useContext(AppContext)
 
     const list = () => (
         <Box
@@ -67,6 +68,9 @@ export const Navigation = () => {
                             Movies Recommendation
                         </Typography>
                     </Link>
+                    <Box>
+                        {state.locale}
+                    </Box>
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
                         <Button component={RouterLink} to={'settings'}
                                 sx={{my: 2, color: 'white', display: 'block'}}>
