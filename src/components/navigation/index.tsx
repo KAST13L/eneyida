@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useCallback, useContext, useState} from 'react';
 import {
     AppBar,
     Box,
@@ -11,7 +11,7 @@ import {
     ListItem,
     ListItemButton,
     ListItemIcon,
-    ListItemText,
+    ListItemText, Switch,
     Toolbar,
     Typography
 } from "@mui/material";
@@ -19,10 +19,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {Link as RouterLink} from "react-router-dom";
 import {AppContext} from "../../context";
+import {LOCALES} from "../../variables";
 
 export const Navigation = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const {state, dispatch} = useContext(AppContext)
+
+    const setLanguage = useCallback((locale: string) => {
+        dispatch({
+            type: 'setLocale',
+            locale
+        })
+    }, [])
 
     const list = () => (
         <Box
@@ -68,8 +76,23 @@ export const Navigation = () => {
                             Movies Recommendation
                         </Typography>
                     </Link>
-                    <Box>
-                        language:{state.locale}
+                    <Box sx={{m: '0 10px 0 0'}}>
+                        <Button onClick={() => setLanguage(LOCALES.UKRAINIAN)}
+                                sx={{color: 'white'}}
+                                disabled={state.locale === LOCALES.UKRAINIAN}>
+                            uk
+                        </Button>
+                        <Switch value={state.locale} onChange={() => {
+                            setLanguage(
+                                state.locale === LOCALES.ENGLISH ? LOCALES.UKRAINIAN : LOCALES.ENGLISH
+                            )
+                        }}/>
+                        <Button onClick={() => setLanguage(LOCALES.ENGLISH)}
+                                sx={{color: 'white'}}
+                                disabled={state.locale === LOCALES.ENGLISH}>
+                            en
+                        </Button>
+
                     </Box>
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
                         <Button component={RouterLink} to={'settings'}
