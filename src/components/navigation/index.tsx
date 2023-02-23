@@ -78,8 +78,8 @@ export const Navigation = () => {
                     </Link>
                     <Box sx={{m: '0 10px 0 0'}}>
                         <Button sx={{color: 'white'}}
-                                disabled={state.locale === LOCALES.UKRAINIAN}>
-                            uk
+                                disabled={state.locale === LOCALES.ENGLISH}>
+                            en
                         </Button>
                         <Switch color={'default'} value={state.locale} onChange={() => {
                             setLanguage(
@@ -87,10 +87,9 @@ export const Navigation = () => {
                             )
                         }}/>
                         <Button sx={{color: 'white'}}
-                                disabled={state.locale === LOCALES.ENGLISH}>
-                            en
+                                disabled={state.locale === LOCALES.UKRAINIAN}>
+                            uk
                         </Button>
-
                     </Box>
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
                         <Button component={RouterLink} to={'settings'}
