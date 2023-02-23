@@ -62,14 +62,14 @@ export const Navigation = () => {
                             <MenuIcon/>
                         </IconButton>
                     </Hidden>
-                    <Link component={RouterLink} to={'/'} sx={{flexGrow: 1}}>
+                    <Link component={RouterLink} to={'/eneyida'} sx={{flexGrow: 1}}>
                         <Typography variant="h6" component="div"
                                     style={{color: 'white'}}>
                             Movies Recommendation
                         </Typography>
                     </Link>
                     <Box>
-                        {state.locale}
+                        language:{state.locale}
                     </Box>
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
                         <Button component={RouterLink} to={'settings'}

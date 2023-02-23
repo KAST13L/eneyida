@@ -1,6 +1,5 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from "@storybook/react";
-import {HashRouter} from "react-router-dom";
 import {GraphQlServer} from "../graphQlServer";
 import {App} from '../App';
 
@@ -9,9 +8,7 @@ export default {
     component: App
 } as ComponentMeta<typeof App>;
 
-const Template: ComponentStory<typeof App> = () => <HashRouter>
-    <GraphQlServer component={<App/>}/>
-</HashRouter>;
+const Template: ComponentStory<typeof App> = () => <GraphQlServer component={<App/>}/>
 
 export const View = Template.bind({});
 

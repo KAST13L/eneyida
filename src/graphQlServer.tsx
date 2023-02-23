@@ -23,13 +23,14 @@ interface GraphQlServerPropsType {
 
 export const GraphQlServer = ({component}: GraphQlServerPropsType) => {
     return (
-        <ApolloProvider client={client}>
-            <AppContextProvider>
-                <BrowserRouter>
+        <BrowserRouter>
+            <ApolloProvider client={client}>
+                <AppContextProvider>
                     {component}
-                </BrowserRouter>
-            </AppContextProvider>
-        </ApolloProvider>
+                </AppContextProvider>
+            </ApolloProvider>
+        </BrowserRouter>
+
     )
 };
 
