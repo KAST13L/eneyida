@@ -1,7 +1,7 @@
 import {
-    ApolloClient,
+    ApolloClient, ApolloLink,
     ApolloProvider,
-    createHttpLink,
+    createHttpLink, from,
     InMemoryCache
 } from "@apollo/client";
 import React, {ReactComponentElement} from "react";
@@ -11,8 +11,17 @@ import {BrowserRouter} from "react-router-dom";
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
 });
+
+const localeMiddleware = new ApolloLink((operation, forward) => {
+    const customHeaders = operation.getContext().hasOwnProperty("headers") ? operation.getContext().headers : {};
+    operation.setContext({
+        headers: {...customHeaders}
+    });
+    return forward(operation);
+});
+
 const client = new ApolloClient({
-    link: httpLink,
+    link: from([localeMiddleware, httpLink]),
     cache: new InMemoryCache(),
     connectToDevTools: true
 });
