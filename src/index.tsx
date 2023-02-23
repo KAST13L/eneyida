@@ -9,4 +9,7 @@ const container = document.getElementById('eneyida');
 const root = createRoot(container!);
 
 
-root.render(<AppContextProvider><GraphQlServer component={<App/>}/></AppContextProvider>);
+root.render(
+    <AppContextProvider>
+        <GraphQlServer component={<App/>}/>
+    </AppContextProvider>);
