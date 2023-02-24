@@ -89,8 +89,8 @@ export const Navigation = () => {
                         <Button sx={{color: 'white'}}
                                 disabled={state.locale === LOCALES.ENGLISH}>
                             uk
-
                         </Button>
+
                     </Box>
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
                         <Button component={RouterLink} to={'settings'}
