@@ -78,16 +78,16 @@ export const Navigation = () => {
                     </Link>
                     <Box sx={{m: '0 10px 0 0'}}>
                         <Button sx={{color: 'white'}}
-                                disabled={state.locale === LOCALES.ENGLISH}>
+                                disabled={state.locale === LOCALES.UKRAINIAN}>
                             en
                         </Button>
                         <Switch color={'default'} value={state.locale} onChange={() => {
                             setLanguage(
-                                state.locale === LOCALES.ENGLISH ? LOCALES.UKRAINIAN : LOCALES.ENGLISH
+                                state.locale === LOCALES.UKRAINIAN ? LOCALES.ENGLISH : LOCALES.UKRAINIAN
                             )
                         }}/>
                         <Button sx={{color: 'white'}}
-                                disabled={state.locale === LOCALES.UKRAINIAN}>
+                                disabled={state.locale === LOCALES.ENGLISH}>
                             uk
                         </Button>
                     </Box>
