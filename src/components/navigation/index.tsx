@@ -90,7 +90,6 @@ export const Navigation = () => {
                                 disabled={state.locale === LOCALES.ENGLISH}>
                             uk
 
-
                         </Button>
                     </Box>
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
