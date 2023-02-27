@@ -8,7 +8,8 @@ import {
 } from "@apollo/client";
 import React, {ReactComponentElement, useContext} from "react";
 import {BrowserRouter} from "react-router-dom";
-import {AppContext} from "./context";
+import {AppContext} from "./providers/context";
+import {I18nProvider} from "./providers/i18n";
 
 interface GraphQlServerPropsType {
     component: ReactComponentElement<any>
@@ -39,9 +40,11 @@ export const GraphQlServer = ({component}: GraphQlServerPropsType,) => {
 
     return (
         <BrowserRouter>
-            <ApolloProvider client={client}>
-                {component}
-            </ApolloProvider>
+            <I18nProvider locale={state.locale}>
+                <ApolloProvider client={client}>
+                    {component}
+                </ApolloProvider>
+            </I18nProvider>
         </BrowserRouter>
 
     )

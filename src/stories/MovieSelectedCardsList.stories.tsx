@@ -4,7 +4,7 @@ import {action} from "@storybook/addon-actions";
 import {SelectedCardMoviesList} from "../components/selectedMoviesList";
 import {movies} from "./stub";
 import {GraphQlServer} from "../graphQlServer";
-import {AppContextProvider} from "../context";
+import {AppContextProvider} from "../providers/context";
 
 export default {
     title: 'List/ SelectedCardMoviesList',

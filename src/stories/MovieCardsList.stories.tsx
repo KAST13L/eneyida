@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {MoviesList} from '../components/moviesList';
 import {action} from "@storybook/addon-actions";
 import {GraphQlServer} from "../graphQlServer";
-import {AppContextProvider} from "../context";
+import {AppContextProvider} from "../providers/context";
 
 export default {
     title: 'List/ MoviesList',

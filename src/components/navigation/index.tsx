@@ -18,7 +18,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {Link as RouterLink} from "react-router-dom";
-import {AppContext} from "../../context";
+import {AppContext} from "../../providers/context";
 import {LOCALES} from "../../variables";
 
 export const Navigation = () => {

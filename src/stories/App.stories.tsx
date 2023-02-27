@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {GraphQlServer} from "../graphQlServer";
 import {App} from '../App';
-import {AppContextProvider} from "../context";
+import {AppContextProvider} from "../providers/context";
 
 export default {
     title: 'App/ App',
