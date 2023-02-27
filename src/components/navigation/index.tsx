@@ -11,7 +11,8 @@ import {
     ListItem,
     ListItemButton,
     ListItemIcon,
-    ListItemText, Switch,
+    ListItemText,
+    Switch,
     Toolbar,
     Typography
 } from "@mui/material";
@@ -78,10 +79,16 @@ export const Navigation = () => {
                             <FormattedMessage id="navigation.home"/>
                         </Typography>
                     </Link>
+                    <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
+                        <Button component={RouterLink} to={'settings'}
+                                sx={{my: 2, color: 'white', display: 'block'}}>
+                            <FormattedMessage id="navigation.settings" />
+                        </Button>
+                    </Box>
                     <Box sx={{m: '0 10px 0 0'}}>
                         <Button sx={{color: 'white'}}
                                 disabled={state.locale === LOCALES.UKRAINIAN}>
-                            en
+                            <FormattedMessage id="navigation.en"/>
                         </Button>
                         <Switch color={'default'} value={state.locale} onChange={() => {
                             setLanguage(
@@ -90,13 +97,7 @@ export const Navigation = () => {
                         }}/>
                         <Button sx={{color: 'white'}}
                                 disabled={state.locale === LOCALES.ENGLISH}>
-                            uk
-                        </Button>
-                    </Box>
-                    <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
-                        <Button component={RouterLink} to={'settings'}
-                                sx={{my: 2, color: 'white', display: 'block'}}>
-                            <FormattedMessage id="navigation.settings" />
+                            <FormattedMessage id="navigation.uk"/>
                         </Button>
                     </Box>
                 </Toolbar>
