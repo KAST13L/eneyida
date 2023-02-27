@@ -1,5 +1,12 @@
-import {LOCALES} from "../../variables";
+import { useSearchParams } from "react-router-dom";
 
-export default {
-    locale: LOCALES.ENGLISH,
-};
+import { getFromStorage } from '../../utils/localStorage'
+import {LOCALES, STORAGE_KEY} from "../../variables";
+
+export const useDefaultContext = () => {
+    const [ searchParams ] = useSearchParams();
+
+    return {
+        locale: getFromStorage(STORAGE_KEY) || searchParams.get('locale') || LOCALES.ENGLISH,
+    }
+}

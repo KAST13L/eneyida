@@ -7,7 +7,6 @@ import {
     InMemoryCache
 } from "@apollo/client";
 import React, {ReactComponentElement, useContext} from "react";
-import {BrowserRouter} from "react-router-dom";
 import {AppContext} from "./providers/context";
 import {I18nProvider} from "./providers/i18n";
 
@@ -39,14 +38,11 @@ export const GraphQlServer = ({component}: GraphQlServerPropsType,) => {
     });
 
     return (
-        <BrowserRouter>
-            <I18nProvider locale={state.locale}>
-                <ApolloProvider client={client}>
-                    {component}
-                </ApolloProvider>
-            </I18nProvider>
-        </BrowserRouter>
-
+        <I18nProvider locale={state.locale}>
+            <ApolloProvider client={client}>
+                {component}
+            </ApolloProvider>
+        </I18nProvider>
     )
 };
 

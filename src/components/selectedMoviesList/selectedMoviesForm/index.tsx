@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Box, Button, TextField} from "@mui/material";
 import {Field, Form} from 'react-final-form'
 import {MovieType} from "../../../types/types";
 import Typography from "@mui/material/Typography";
 import {ConfirmModal} from "../../ConfirmModal";
+import {AppContext} from "../../../providers/context";
 
 interface OnSubmitSelectedMoviesFormPropsType {
     listName: string
@@ -17,10 +18,11 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
 
     const [link, setLink] = useState('')
     const [listName, setListName] = useState('')
+    const { state } = useContext(AppContext);
 
     const onSubmit = ({listName}: OnSubmitSelectedMoviesFormPropsType) => {
         const ids = selectedMovies.map(el => el.id)
-        const link = `${window.location.host}/recommend?title=${listName}&ids=${ids.join()}`
+        const link = `${window.location.host}/recommend?title=${listName}&locale=${state.locale}&ids=${ids.join()}`;
         setLink(link)
         setListName(listName)
     }

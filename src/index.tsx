@@ -4,12 +4,15 @@ import './index.css';
 import {App} from './App';
 import {GraphQlServer} from "./graphQlServer";
 import {AppContextProvider} from "./providers/context";
+import {BrowserRouter} from "react-router-dom";
 
 const container = document.getElementById('eneyida');
 const root = createRoot(container!);
 
 
 root.render(
-    <AppContextProvider>
-        <GraphQlServer component={<App/>}/>
-    </AppContextProvider>);
+    <BrowserRouter>
+        <AppContextProvider>
+            <GraphQlServer component={<App/>}/>
+        </AppContextProvider>
+    </BrowserRouter>);

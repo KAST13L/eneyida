@@ -1,20 +1,23 @@
-import React, {useReducer, createContext} from 'react';
-import defaultContext from "./defaultContext";
+import React, {createContext, useReducer} from 'react';
+import {STORAGE_KEY} from "../../variables";
+import {saveToStorage} from "../../utils/localStorage";
+import {useDefaultContext} from "./defaultContext";
 
-const AppContext = createContext<any | null>(null) ;
+const AppContext = createContext<any | null>(null);
 
-let reducer = (state: { locale: string }, action: any ): any => {
+let reducer = (state: { locale: string }, action: any): any => {
     switch (action.type) {
-        case "reset":
-            return defaultContext;
         case "setLocale":
-            return { ...state, locale: action.locale };
+            saveToStorage(STORAGE_KEY, action.locale);
+            return {...state, locale: action.locale};
     }
 };
 
 const AppContextProvider = ({children}: any) => {
+
+    const defaultContext = useDefaultContext();
     const [state, dispatch] = useReducer(reducer, defaultContext);
-    const value = { state, dispatch };
+    const value = {state, dispatch};
 
     return (
         <AppContext.Provider value={value}>
@@ -23,4 +26,4 @@ const AppContextProvider = ({children}: any) => {
     );
 };
 
-export { AppContext, AppContextProvider };
+export {AppContext, AppContextProvider};
