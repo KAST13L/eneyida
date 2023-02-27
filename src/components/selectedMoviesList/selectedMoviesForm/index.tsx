@@ -5,6 +5,7 @@ import {MovieType} from "../../../types/types";
 import Typography from "@mui/material/Typography";
 import {ConfirmModal} from "../../ConfirmModal";
 import {AppContext} from "../../../providers/context";
+import {FormattedMessage} from "react-intl";
 
 interface OnSubmitSelectedMoviesFormPropsType {
     listName: string
@@ -18,7 +19,7 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
 
     const [link, setLink] = useState('')
     const [listName, setListName] = useState('')
-    const { state } = useContext(AppContext);
+    const {state} = useContext(AppContext);
 
     const onSubmit = ({listName}: OnSubmitSelectedMoviesFormPropsType) => {
         const ids = selectedMovies.map(el => el.id)
@@ -31,7 +32,7 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
         setLink('')
     }
 
-    return (<Box sx={{m:'5px 0'}}>
+    return (<Box sx={{m: '5px 0'}}>
             <Form
                 onSubmit={onSubmit}
                 validate={values => {
@@ -46,9 +47,17 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
                         <Field name="listName">
                             {({input, meta}) => (
                                 <Box sx={{display: 'flex', position: 'relative'}}>
-                                    <TextField {...input} variant={'outlined'} fullWidth
-                                               placeholder={'enter a title for the movie list'}
-                                    />
+                                    <FormattedMessage id="form_input_placeholder">
+                                        {placeholder =>
+                                            <TextField
+                                                {...input}
+                                                variant={'outlined'}
+                                                fullWidth
+                                                placeholder={placeholder}
+                                                inputProps={{ 'aria-label': 'put list name' }}
+                                            />
+                                        }
+                                    </FormattedMessage>
                                     {meta.error && meta.touched && <Typography sx={{
                                         color: 'red',
                                         position: 'absolute',

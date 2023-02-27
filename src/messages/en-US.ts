@@ -8,8 +8,8 @@ export default {
             'en':'en',
             'uk':'uk'
         },
-        'no_selected_movies': 'No selected movies',
-        'put_the_list_name': 'Put the list name',
+        'no_selected_movies': 'No selected movies...',
+        'form_input_placeholder': 'enter a title for the movie list',
         'share_with_friends': 'Share with friends',
         'copied': 'Copied!',
         'select': 'Add',

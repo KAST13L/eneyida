@@ -8,8 +8,8 @@ export default {
             'en':'АНГ',
             'uk':'УКР'
         },
-        'no_selected_movies': 'Нема вибраних фільмів',
-        'put_the_list_name': 'Вкажіть імʼя списку',
+        'no_selected_movies': 'Немає вибраних фільмів...',
+        'form_input_placeholder': 'введіть назву для сформованого спику фільмів',
         'share_with_friends': 'Поділитися з друзями',
         'copied': 'Скопійовано!',
         'select': 'Вибрати',
