@@ -12,6 +12,7 @@ import Collapse from "@mui/material/Collapse";
 import Alert from "@mui/material/Alert";
 import CloseIcon from "@mui/icons-material/Close";
 import {CONFIRM_TIMEOUT} from "../../variables";
+import {FormattedMessage} from "react-intl";
 
 interface TextFieldForUrlPropsType {
     url: string
@@ -65,7 +66,7 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
                             </IconButton>
                         }
                     >
-                        Copied!
+                        <FormattedMessage id={'copied'}/>
                     </Alert>
                 </Collapse>
             </Box>
