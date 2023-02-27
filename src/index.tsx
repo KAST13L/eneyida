@@ -9,10 +9,10 @@ import {BrowserRouter} from "react-router-dom";
 const container = document.getElementById('eneyida');
 const root = createRoot(container!);
 
-
 root.render(
     <BrowserRouter>
         <AppContextProvider>
             <GraphQlServer component={<App/>}/>
         </AppContextProvider>
     </BrowserRouter>);
+
