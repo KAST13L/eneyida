@@ -2,6 +2,7 @@ import React from 'react';
 import {IconButton, Menu, MenuItem} from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {MovieType} from "../../types/types";
+import {FormattedMessage} from "react-intl";
 
 interface RightTopButtonPropsType {
     callback: (movie:MovieType) => void
@@ -36,14 +37,12 @@ export const RightTopButtonMenu: React.FC<RightTopButtonPropsType> = ({callback,
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={
                     ()=> {
                         callback(movie)
                         handleClose()
                     }
-                }>Add</MenuItem>
+                }><FormattedMessage id="select"/></MenuItem>
             </Menu>
         </>
     );
