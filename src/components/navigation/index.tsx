@@ -20,6 +20,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import {Link as RouterLink} from "react-router-dom";
 import {AppContext} from "../../providers/context";
 import {LOCALES} from "../../variables";
+import {FormattedMessage} from "react-intl";
+import translate from "../../utils/translate";
 
 export const Navigation = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -46,7 +48,7 @@ export const Navigation = () => {
                             <SettingsIcon/>
                         </ListItemIcon>
                         <Link component={RouterLink} to={'settings'}>
-                            <ListItemText primary={'Settings'}/>
+                            <ListItemText primary={translate('navigation.settings')}/>
                         </Link>
                     </ListItemButton>
                 </ListItem>
@@ -73,7 +75,7 @@ export const Navigation = () => {
                     <Link component={RouterLink} to={'/eneyida'} sx={{flexGrow: 1}}>
                         <Typography variant="h6" component="div"
                                     style={{color: 'white'}}>
-                            Movies Recommendation
+                            <FormattedMessage id="navigation.home"/>
                         </Typography>
                     </Link>
                     <Box sx={{m: '0 10px 0 0'}}>
@@ -94,7 +96,7 @@ export const Navigation = () => {
                     <Box sx={{display: {xs: 'none', lg: 'flex'}}}>
                         <Button component={RouterLink} to={'settings'}
                                 sx={{my: 2, color: 'white', display: 'block'}}>
-                            Settings
+                            <FormattedMessage id="navigation.settings" />
                         </Button>
                     </Box>
                 </Toolbar>
