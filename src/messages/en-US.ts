@@ -13,6 +13,6 @@ export default {
         'share_with_friends': 'Share with friends',
         'copied': 'Copied!',
         'select': 'Add',
-        'delete': 'Delete'
+        'required': 'required field'
     }
 };

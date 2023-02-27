@@ -13,6 +13,6 @@ export default {
         'share_with_friends': 'Поділитися з друзями',
         'copied': 'Скопійовано!',
         'select': 'Вибрати',
-        'delete': 'Видалити'
+        'required': 'Обовязкове поле'
     },
 };

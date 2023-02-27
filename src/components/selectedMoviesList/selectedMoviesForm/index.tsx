@@ -36,9 +36,9 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
             <Form
                 onSubmit={onSubmit}
                 validate={values => {
-                    const errors: { listName?: string } = {}
+                    const errors: { listName?: string | any } = {}
                     if (!values.listName) {
-                        errors.listName = 'Required'
+                        errors.listName = <FormattedMessage id={'required'}/>
                     }
                     return errors
                 }}
@@ -61,9 +61,8 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
                                     {meta.error && meta.touched && <Typography sx={{
                                         color: 'red',
                                         position: 'absolute',
-                                        right: '70px',
-                                        top: '15px'
-                                    }}>{meta.error}</Typography>}
+                                        right: '200px',
+                                        }}>{meta.error}</Typography>}
                                     <Button variant={'contained'}
                                             type={'submit'}>OK</Button>
                                 </Box>
