@@ -12,7 +12,7 @@ export default {
         'put_the_list_name': 'Put the list name',
         'share_with_friends': 'Share with friends',
         'copied': 'Copied!',
-        select: 'Add',
-        delete: 'Delete'
+        'select': 'Add',
+        'delete': 'Delete'
     }
 };
