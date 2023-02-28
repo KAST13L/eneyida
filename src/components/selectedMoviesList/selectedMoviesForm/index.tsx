@@ -47,22 +47,17 @@ export const SelectedMoviesForm: React.FC<SelectedMoviesFormPropsType> = ({selec
                         <Field name="listName">
                             {({input, meta}) => (
                                 <Box sx={{display: 'flex', position: 'relative'}}>
-                                    <FormattedMessage id="form_input_placeholder">
-                                        {placeholder =>
-                                            <TextField
-                                                {...input}
-                                                variant={'outlined'}
-                                                fullWidth
-                                                placeholder={placeholder}
-                                                inputProps={{ 'aria-label': 'put list name' }}
-                                            />
-                                        }
-                                    </FormattedMessage>
+                                    <TextField
+                                        {...input}
+                                        variant={'outlined'}
+                                        fullWidth
+                                        inputProps={{'aria-label': 'put list name'}}
+                                    />
                                     {meta.error && meta.touched && <Typography sx={{
                                         color: 'red',
                                         position: 'absolute',
                                         right: '200px',
-                                        }}>{meta.error}</Typography>}
+                                    }}>{meta.error}</Typography>}
                                     <Button variant={'contained'}
                                             type={'submit'}>OK</Button>
                                 </Box>
