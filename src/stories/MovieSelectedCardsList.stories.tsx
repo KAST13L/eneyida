@@ -5,6 +5,7 @@ import {SelectedCardMoviesList} from "../components/selectedMoviesList";
 import {movies} from "./stub";
 import {GraphQlServer} from "../graphQlServer";
 import {AppContextProvider} from "../providers/context";
+import {BrowserRouter} from "react-router-dom";
 
 export default {
     title: 'List/ SelectedCardMoviesList',
@@ -12,9 +13,12 @@ export default {
 } as ComponentMeta<typeof SelectedCardMoviesList>;
 
 const Template: ComponentStory<typeof SelectedCardMoviesList> = (args) =>
-    <AppContextProvider>
-        <GraphQlServer component={<SelectedCardMoviesList {...args}/>}/>
-    </AppContextProvider>
+    <BrowserRouter>
+        <AppContextProvider>
+            <GraphQlServer component={<SelectedCardMoviesList {...args}/>}/>
+        </AppContextProvider>
+    </BrowserRouter>
+
 
 export const View = Template.bind({});
 View.args = {
