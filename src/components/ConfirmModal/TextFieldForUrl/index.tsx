@@ -11,7 +11,7 @@ import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
 import Alert from "@mui/material/Alert";
 import CloseIcon from "@mui/icons-material/Close";
-import {CONFIRM_TIMEOUT} from "../../variables";
+import {CONFIRM_TIMEOUT, LOCALHOST_URL_LENGTH} from "../../../variables";
 import {FormattedMessage} from "react-intl";
 
 interface TextFieldForUrlPropsType {
@@ -52,7 +52,7 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
                     </CopyToClipboard>
                 </IconButton>
                 <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
-                <IconButton href={url} target={'_blank'} sx={{p: '10px'}}>
+                <IconButton href={url.slice(LOCALHOST_URL_LENGTH)} sx={{p: '10px'}}>
                     <VisibilityIcon/>
                 </IconButton>
             </Paper>

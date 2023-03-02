@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import {TextFieldForUrl} from "../TextFieldForUrl";
+import {TextFieldForUrl} from "./TextFieldForUrl";
 import {
     EmailIcon,
     EmailShareButton,
@@ -22,7 +22,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    bgcolor: 'background.paper',
+    backgroundColor: 'background.paper',
     borderRadius: '10px',
     boxShadow: 24,
     p: 4,
