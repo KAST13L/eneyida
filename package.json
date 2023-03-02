@@ -21,6 +21,7 @@
     "@types/react": "^18.0.0",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-dom": "^18.0.0",
+    "@types/react-share": "^4.0.0",
     "final-form": "^4.20.9",
     "flat": "^5.0.2",
     "gh-pages": "^5.0.0",
@@ -33,6 +34,7 @@
     "react-intl": "^6.0.5",
     "react-router-dom": "^6.7.0",
     "react-scripts": "5.0.1",
+    "react-share": "^4.4.1",
     "storybook": "^6.5.16",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"

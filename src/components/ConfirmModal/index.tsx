@@ -3,6 +3,50 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {TextFieldForUrl} from "../TextFieldForUrl";
+import {
+    EmailIcon,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    HatenaIcon,
+    InstapaperIcon,
+    LineIcon,
+    LinkedinIcon,
+    LivejournalIcon,
+    MailruIcon,
+    OKIcon,
+    PinterestIcon,
+    PocketIcon,
+    RedditIcon,
+    TelegramIcon,
+    TumblrIcon,
+    TwitterIcon,
+    ViberIcon,
+    VKIcon,
+    WeiboIcon,
+    WhatsappIcon,
+    WorkplaceIcon
+} from "react-share";
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton
+} from "react-share";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -38,6 +82,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                     {title}
                 </Typography>
                 <TextFieldForUrl url={url}/>
+                <FacebookShareButton url={url} children={<FacebookIcon round size={'40px'}/>}/>
             </Box>
         </Modal>
     );
