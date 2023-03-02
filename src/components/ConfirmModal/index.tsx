@@ -3,7 +3,18 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {TextFieldForUrl} from "../TextFieldForUrl";
-import {FacebookIcon, FacebookShareButton} from "react-share";
+import {
+    EmailIcon,
+    EmailShareButton,
+    FacebookIcon,
+    FacebookShareButton,
+    TelegramIcon,
+    TelegramShareButton,
+    ViberIcon,
+    ViberShareButton,
+    WhatsappIcon,
+    WhatsappShareButton
+} from "react-share";
 import {FormattedMessage} from "react-intl";
 
 const style = {
@@ -44,7 +55,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                     <Typography variant="h6">
                         <FormattedMessage id='title_movies_list'/>
                     </Typography>
-                    <Typography variant="h4" sx={{textAlign: 'center', m: '5px 0'}}>
+                    <Typography variant="h4" sx={{textAlign: 'center', m: '30px 30px'}}>
                         {title}
                     </Typography>
                 </Box>
@@ -53,9 +64,22 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                     <Typography variant='h6'>
                         <FormattedMessage id='share_link'/>
                     </Typography>
-                    <Box sx={{m: '3px 0', display:'flex', justifyContent:'space-around', textAlign: 'center',}}>
-                        <FacebookShareButton url={url} children={<FacebookIcon round size={'45px'}/>}/>
-                        <FacebookShareButton url={url} children={<FacebookIcon round size={'45px'}/>}/>
+                    <Box sx={{
+                        m: '15px 30px',
+                        display: 'flex',
+                        justifyContent: 'space-around',
+                        textAlign: 'center',
+                    }}>
+                        <FacebookShareButton url={url} children={<FacebookIcon round
+                                                                               size={'45px'}/>}/>
+                        <TelegramShareButton url={url} children={<TelegramIcon round
+                                                                               size={'45px'}/>}/>
+                        <WhatsappShareButton url={url} children={<WhatsappIcon round
+                                                                               size={'45px'}/>}/>
+                        <ViberShareButton url={url}
+                                          children={<ViberIcon round size={'45px'}/>}/>
+                        <EmailShareButton url={url}
+                                          children={<EmailIcon round size={'45px'}/>}/>
                     </Box>
                 </Box>
 
