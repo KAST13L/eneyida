@@ -52,11 +52,9 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
                     <Typography variant='h6'>
                         Share this link by:
                     </Typography>
-                    <Box sx={{m: '3px 0', textAlign: 'center',}}>
-                        <FacebookShareButton url={url} children={<FacebookIcon round
-                                                                               size={'40px'}/>}/>
-                        <FacebookShareButton url={url} children={<FacebookIcon round
-                                                                               size={'40px'}/>}/>
+                    <Box sx={{m: '3px 0', display:'flex', justifyContent:'space-around', textAlign: 'center',}}>
+                        <FacebookShareButton url={url} children={<FacebookIcon round size={'45px'}/>}/>
+                        <FacebookShareButton url={url} children={<FacebookIcon round size={'45px'}/>}/>
                     </Box>
                 </Box>
 

@@ -22,7 +22,7 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
 
     const [isOpenAlert, setIsOpenAlert] = useState(false)
 
-    useEffect(()=>{
+    useEffect(() => {
         let timer: NodeJS.Timeout;
         if (isOpenAlert) {
             timer = setTimeout(() => {
@@ -30,24 +30,30 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
             }, CONFIRM_TIMEOUT)
         }
         return () => clearTimeout(timer)
-    },[isOpenAlert])
+    }, [isOpenAlert])
 
     return (
         <>
             <Paper
                 component="form"
-                sx={{m:'5px 0', p: '2px 4px', display: 'flex', alignItems: 'center', width: '100%'}}
+                sx={{
+                    m: '5px 0',
+                    p: '2px 4px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    width: '100%'
+                }}
             >
                 <InputBase sx={{ml: 1, flex: 1}} value={url}/>
-                <IconButton href={url} target={'_blank'} sx={{p: '10px'}}>
-                    <VisibilityIcon/>
-                </IconButton>
-                <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
                 <IconButton color="primary" sx={{p: '10px'}}>
                     <CopyToClipboard text={url}
                                      onCopy={() => setIsOpenAlert(true)}>
                         <ContentCopyIcon/>
                     </CopyToClipboard>
+                </IconButton>
+                <Divider sx={{height: 28, m: 0.5}} orientation="vertical"/>
+                <IconButton href={url} target={'_blank'} sx={{p: '10px'}}>
+                    <VisibilityIcon/>
                 </IconButton>
             </Paper>
             <Box sx={{width: '100%'}}>
