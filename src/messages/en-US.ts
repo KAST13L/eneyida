@@ -13,6 +13,9 @@ export default {
         'share_with_friends': 'Share with friends',
         'copied': 'Copied!',
         'select': 'Add',
-        'required': 'required field'
+        'required': 'required field',
+        'title_movies_list':'Title of the movies list:',
+        'share_link':'Share this link by:',
+        'copy_link':'Or copy link:'
     }
 };
