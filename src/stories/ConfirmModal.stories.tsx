@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {ConfirmModal} from "../components/ConfirmModal";
 import {AppContextProvider} from "../providers/context";
 import {BrowserRouter} from "react-router-dom";
+import {GraphQlServer} from "../graphQlServer";
 
 export default {
     title: 'Components/Confirm Modal',
@@ -12,7 +13,7 @@ export default {
 const Template: ComponentStory<typeof ConfirmModal> = (args) =>
     <BrowserRouter>
         <AppContextProvider>
-            <ConfirmModal {...args}/>
+            <GraphQlServer component={<ConfirmModal {...args}/>}/>
         </AppContextProvider>
     </BrowserRouter>
 
@@ -22,7 +23,7 @@ View.args = {
     onClose: (isOpen) => {
     },
     url: 'http://localhost:3000/recomend/blablablasiskaipiska',
-    title: 'My favorite films'
+    title: 'My favorite films list'
 }
 
 
