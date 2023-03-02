@@ -78,8 +78,8 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
             onClose={onClose}
         >
             <Box sx={style}>
-                <Typography variant="h6" component="h2">
-                    {title}
+                <Typography variant="h6" component="h3">
+                        {title}
                 </Typography>
                 <TextFieldForUrl url={url}/>
                 <FacebookShareButton url={url} children={<FacebookIcon round size={'40px'}/>}/>
