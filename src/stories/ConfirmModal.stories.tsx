@@ -22,7 +22,7 @@ View.args = {
     open: true,
     onClose: (isOpen) => {
     },
-    url: 'http://localhost:3000/recomend/blablablasiskaipiska',
+    url: 'http://localhost:3000/recomend/movies/en/hallo%daskoli_202/yoyosamurai',
     title: 'My favorite films list'
 }
 
