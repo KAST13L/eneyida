@@ -3,6 +3,8 @@ import {MovieCardSelected} from "../components";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {action} from "@storybook/addon-actions";
 import {movies} from "./stub";
+import {AppContextProvider} from "../providers/context";
+import {BrowserRouter} from "react-router-dom";
 
 export default {
     title: 'Card/MovieCardSelected',
@@ -12,7 +14,12 @@ export default {
     }
 } as ComponentMeta<typeof MovieCardSelected>;
 
-const Template: ComponentStory<typeof MovieCardSelected> = (args) => <MovieCardSelected {...args}/>;
+const Template: ComponentStory<typeof MovieCardSelected> = (args) =>
+    <BrowserRouter>
+        <AppContextProvider>
+            <MovieCardSelected {...args}/>
+        </AppContextProvider>
+    </BrowserRouter>
 
 export const View = Template.bind({});
 View.args = {
