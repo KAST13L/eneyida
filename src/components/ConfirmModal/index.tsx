@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {TextFieldForUrl} from "../TextFieldForUrl";
 import {FacebookIcon, FacebookShareButton} from "react-share";
+import {FormattedMessage} from "react-intl";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -41,7 +42,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
             <Box sx={style}>
                 <Box>
                     <Typography variant="h6">
-                        Title of the movies list:
+                        <FormattedMessage id='title_movies_list'/>
                     </Typography>
                     <Typography variant="h4" sx={{textAlign: 'center', m: '5px 0'}}>
                         {title}
@@ -50,7 +51,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
 
                 <Box>
                     <Typography variant='h6'>
-                        Share this link by:
+                        <FormattedMessage id='share_link'/>
                     </Typography>
                     <Box sx={{m: '3px 0', display:'flex', justifyContent:'space-around', textAlign: 'center',}}>
                         <FacebookShareButton url={url} children={<FacebookIcon round size={'45px'}/>}/>
@@ -60,7 +61,7 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
 
                 <Box>
                     <Typography variant='h6'>
-                        Or copy link:
+                        <FormattedMessage id='copy_link'/>
                     </Typography>
                     <Box sx={{textAlign: 'center'}}>
                         <TextFieldForUrl url={url}/>
