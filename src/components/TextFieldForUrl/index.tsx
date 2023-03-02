@@ -36,7 +36,7 @@ export const TextFieldForUrl: React.FC<TextFieldForUrlPropsType> = ({url}) => {
         <>
             <Paper
                 component="form"
-                sx={{m:'5px 0', p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}
+                sx={{m:'5px 0', p: '2px 4px', display: 'flex', alignItems: 'center', width: '100%'}}
             >
                 <InputBase sx={{ml: 1, flex: 1}} value={url}/>
                 <IconButton href={url} target={'_blank'} sx={{p: '10px'}}>

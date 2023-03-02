@@ -3,50 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {TextFieldForUrl} from "../TextFieldForUrl";
-import {
-    EmailIcon,
-    FacebookIcon,
-    FacebookMessengerIcon,
-    HatenaIcon,
-    InstapaperIcon,
-    LineIcon,
-    LinkedinIcon,
-    LivejournalIcon,
-    MailruIcon,
-    OKIcon,
-    PinterestIcon,
-    PocketIcon,
-    RedditIcon,
-    TelegramIcon,
-    TumblrIcon,
-    TwitterIcon,
-    ViberIcon,
-    VKIcon,
-    WeiboIcon,
-    WhatsappIcon,
-    WorkplaceIcon
-} from "react-share";
-import {
-    EmailShareButton,
-    FacebookShareButton,
-    HatenaShareButton,
-    InstapaperShareButton,
-    LineShareButton,
-    LinkedinShareButton,
-    LivejournalShareButton,
-    MailruShareButton,
-    OKShareButton,
-    PinterestShareButton,
-    PocketShareButton,
-    RedditShareButton,
-    TelegramShareButton,
-    TumblrShareButton,
-    TwitterShareButton,
-    ViberShareButton,
-    VKShareButton,
-    WhatsappShareButton,
-    WorkplaceShareButton
-} from "react-share";
+import {FacebookIcon, FacebookShareButton} from "react-share";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -57,6 +14,10 @@ const style = {
     borderRadius: '10px',
     boxShadow: 24,
     p: 4,
+    minWidth: '400px',
+    display: 'flex-row',
+    justifyContent: 'center',
+    alignItems: 'center',
 };
 
 interface ConfirmModalPropsType {
@@ -78,11 +39,36 @@ export const ConfirmModal: React.FC<ConfirmModalPropsType> = ({
             onClose={onClose}
         >
             <Box sx={style}>
-                <Typography variant="h6" component="h3">
+                <Box>
+                    <Typography variant="h6">
+                        Title of the movies list:
+                    </Typography>
+                    <Typography variant="h4" sx={{textAlign: 'center', m: '5px 0'}}>
                         {title}
-                </Typography>
-                <TextFieldForUrl url={url}/>
-                <FacebookShareButton url={url} children={<FacebookIcon round size={'40px'}/>}/>
+                    </Typography>
+                </Box>
+
+                <Box>
+                    <Typography variant='h6'>
+                        Share this link by:
+                    </Typography>
+                    <Box sx={{m: '3px 0', textAlign: 'center',}}>
+                        <FacebookShareButton url={url} children={<FacebookIcon round
+                                                                               size={'40px'}/>}/>
+                        <FacebookShareButton url={url} children={<FacebookIcon round
+                                                                               size={'40px'}/>}/>
+                    </Box>
+                </Box>
+
+                <Box>
+                    <Typography variant='h6'>
+                        Or copy link:
+                    </Typography>
+                    <Box sx={{textAlign: 'center'}}>
+                        <TextFieldForUrl url={url}/>
+                    </Box>
+                </Box>
+
             </Box>
         </Modal>
     );
