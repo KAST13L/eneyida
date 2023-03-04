@@ -18,6 +18,7 @@ export const App = () => {
 
 
 
+
                         <Route path='*' element={<Home/>}/>
                         <Route path='settings' element={<Settings/>}/>
                         <Route path='recommend' element={<Recommend/>}/>
